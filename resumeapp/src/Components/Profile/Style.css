@@ -1,0 +1,116 @@
+:root
+{
+  --yellow: #F5C32C;
+    --orange : #FCA61F;
+    --black : #242D49;
+    --gray : #788097;
+    --blueCard : #DDF8FE;
+    --purple: #eed2ff;
+    --boxShadow : 0px 19px 60px #00000014;
+    --orangeCard: #fca61f73;
+    --smboxShadow: -79px 51px 60px #00000014; 
+}
+
+.ediprofhover a p {display:none;}
+.ediprofhover a:hover p {display:block;}
+
+
+.sectionsep {
+  background-color: #FCA61F;
+  height: 2px;
+}
+
+#lefheader_profile{
+  background-color: #24d5fd;
+ }
+
+.bg-primary {
+  background-color: black;
+}
+
+.inputWidth {
+  width: fit-content;
+}
+
+.row{
+  text-align:left;
+
+    display: flex;
+    flex:1;
+    gap: 10px;
+  }
+
+
+
+.font-weight{
+  font-size: large;
+  font-weight: 300;
+}
+.font-weight-bold{
+  font-size: large;
+  font-weight: 300;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+button[type=submit] { 
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  width:100%;
+  float: right;
+  margin-bottom: 15px;
+  transition: all ease 0.5s;
+
+  background-color: #FCA61F;
+
+}
+button:hover {
+  background-color: #daa0ff;
+
+}
+form {
+  display: block;
+  margin-bottom: 40em;
+}
+
+
+
+input[type=text],input[type=password],input[type=tel]{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.fw-bold{
+  color:#000000
+}
+a.list-group-item{
+  padding: .15rem 0.25rem;}
+ 
+.list-group{
+  max-height: 150px;
+  margin-bottom: 10px;
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch;
+}
+#ulresume{
+  border: 1px solid #ccc;
+  border-style: groove;
+}
+@media screen and (max-width: 600px) {
+  button[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+ 
+
+body{
+  margin: 0;
+}

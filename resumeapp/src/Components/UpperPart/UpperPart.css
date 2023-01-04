@@ -1,0 +1,77 @@
+.header{
+    display: flex;
+    height: 77vh;
+    margin-top: 6rem;
+}
+
+.head-left{
+    display: flex;
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.head-text{
+    display: flex;
+    flex-direction: column;
+}
+.head-text>:nth-child(1){                 /*the resume studio text styling*/
+    color: var(--black);
+    font-weight: bold;
+    font-size: 3rem;
+} 
+
+.head-text>:nth-child(2){                 /*the resume studio text styling*/
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 3rem;
+} 
+
+.head-text>:nth-child(3){
+    font-weight: 100;
+    font-size: 14px;
+    color: var(--gray);
+    margin-top: 10px;
+}
+
+.head-right{
+    flex: 1;
+    position: relative;
+}
+
+.head-right>*{
+    position: absolute;
+    z-index: 1;
+} 
+
+.cards {
+    position: relative;
+}
+
+.cards > * {
+    position: absolute;
+  }
+  
+.head-button{
+    width: 7rem;
+    height: 3rem;
+}
+.resumeHeader > img {
+    transform: scale(0.1);
+    width: 45px;
+    height: 60px;
+
+}
+
+.blur{
+    position: absolute;
+    width: 22rem;
+    height: 14rem;
+    border-radius: 50%;
+    background: #edd0ff;
+    filter: blur(72px);
+    z-index: -9;
+    top: -18%;
+    left: 56%;
+}
