@@ -18,12 +18,8 @@ const Navbar = () => {
         <div className="n-right">
             <div className="n-list">
                 <ul>
-                    <li>
-                        Home
-                        
-                        
-                    </li>
-                    <li onClick={buildresume}>BuildResume</li>
+                <span> <Link to="/"> Home</Link></span>
+                <span> <Link to="/resume"> Build Resume</Link></span>
                     <li>GetStarted</li>
                 </ul>
             </div>

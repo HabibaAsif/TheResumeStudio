@@ -2,16 +2,14 @@
     padding:20px;
 }
 .row{
-    display: grid;
-    grid-template-columns: 650px 650px;
-    grid-template-rows: auto auto;
+  padding-left: 10px;
 }
-.container .editor-left{
+.container .editor_left{
     text-align: left;
     width:fit-content;
     height:fit-content;
 }
-.container .resume-right{
+.container .resume_right{
     text-align: right;
 }
 .toolbar{
@@ -46,7 +44,7 @@
     position:static;
       color: #fff;
   }
-  .toolbar .button-download {
+  .toolbar .button_download {
     padding: 8px 16px;
     border-radius: 5px;
     background-color: #239ce2;
@@ -61,27 +59,27 @@
     cursor:pointer;
     transition: all ease 0.5s;
   }
-  .toolbar .button-download:hover {
+  .toolbar .button_download:hover {
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(3px);
   }
-  .toolbar .button-download:active {
+  .toolbar .button_download:active {
     color: #000000;
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(3px);
   }
   
-  .toolbar .button-download svg {
+  .toolbar .button_download svg {
     height: 20px;
     width: 20px;
     background-color: #239ce2;
   }
-  .toolbar .button-download svg:active {
+  .toolbar .button_download svg:active {
     height: 20px;
     width: 20px;
     color: #000000;
   }
-.toolbar .button-print {
+.toolbar .button_print {
     padding: 8px 16px;
     border-radius: 5px;
     background-color: #239ce2;
@@ -96,27 +94,30 @@
     cursor:pointer;
     transition: all ease 0.5s;
   }
-  .toolbar .button-print:hover {
+  .toolbar .button_print:hover {
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(3px);
   }
-  .toolbar .button-print:active {
+  .toolbar .button_print:active {
     color: #000000;
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(3px);
   }
   
-  .toolbar .button-print svg {
+  .toolbar .button_print svg {
     height: 20px;
     width: 20px;
     background-color: #239ce2;
   }
-  .toolbar .button-print svg:active {
+  .toolbar .button_print svg:active {
     height: 20px;
     width: 20px;
     color: #000000;
   }
   @media only screen and (max-width:750px){
+    .row{
+      margin-left: -110px;
+    }
     .toolbar{
       padding-right: 10px;
         width: 30%;
@@ -125,7 +126,7 @@
         display: grid;
     }
     .palette{
-      margin-top: 140px;
+      margin-top: 165px;
       position:fixed;
         display: grid;
         padding: 10px;
@@ -147,28 +148,29 @@
       }
     .toolbar .empty{
       position:static;
+      margin-left:-11px;
       color: #fff;
     }
-    .toolbar .button-print {
-      margin-top: 400px;
+    .toolbar .button_print {
+      margin-top: 420px;
         position:fixed;
         text-indent: -999999px;
       }
-    .toolbar .button-print:hover {
+    .toolbar .button_print:hover {
         box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
         transform: translateX(2px);
       }
-      .toolbar .button-download {
-        margin-top: 500px;
+      .toolbar .button_download {
+        margin-top: 520px;
         position:fixed;
           text-indent: -999999px;
         }
-      .toolbar .button-download:hover {
+      .toolbar .button_download:hover {
           box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
           transform: translateX(2px);
         }
-    .container .editor-left{
-        text-align: left;
+      .container .editor_left{
+        margin-left: 100px;
         width:fit-content;
         height:fit-content;
         display: flex;

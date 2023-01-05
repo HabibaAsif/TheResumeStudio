@@ -1,9 +1,20 @@
 import React, { useRef, useState } from "react";
+import Resume from "../Resume/Resume";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { Printer,Download } from "react-feather";
 import Editor from "../Editor/Editor";
-import "./Body.css";
+import styles from "./Body.module.css";
 import { useContext } from "react";
 import { themeContext } from "../../Context";
+import Navbar from '../Navbar/Navbar';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
 
 function Body() {
   const theme = useContext(themeContext);
@@ -60,37 +71,45 @@ function Body() {
     },
   });
   return (
-    <div className='main'>
-        <h1>Global Navbar Position</h1>
-        <div className='container'>
-            <div className='row'>
-                <div className='col-md-6 editor-left'>
-                    <div className='toolbar'>
-                        <div className='palette'>
-                            {color.map(item=>
-                            <span 
-                            key={item}
-                            style={{backgroundColor:item}}
-                            className='color'
+    <div className={styles.main}>
+        <Navbar></Navbar>
+        <Container className={styles.container}>
+            <Row className={styles.row}>
+                <Col sm={6} className={styles.editor_left}>
+                    <div className={styles.toolbar}>
+                        <div className={styles.palette}>
+                        {color.map((item) => (
+                            <span
+                              key={item}
+                              style={{ backgroundColor: item }}
+                              className={`${styles.color} ${
+                                activeColor === item ? styles.active : ""
+                              }`}
+                              onClick={() => setActiveColor(item)}
                             />
-                            )}
+                          ))}
                         </div>
-                        <span style={{color: darkMode? 'var(--orange)': ''}} className="empty">``````````````</span>
-                        <div href='#' className='button-print'>Print<Printer/></div>
-                        <div href='#' className='button-download'>Download<Download/></div>
+                        <span style={{color: darkMode? 'black': ''}} className={styles.empty}>```````````</span>
+                        <div href='#' className={styles.button_print}>Print<Printer/></div>
+                        <div href='#' className={styles.button_download}>Download<Download/></div>
                     </div>
-                    <div className='editor'>
+                    <div className={styles.editor}>
                     <Editor 
                     sections={sections}
                     information={resumeInformation}
                     setInformation={setResumeInformation}/>
                     </div>
-                </div>
-                <div className='col-md-6 resume-right'>
-                    This will be replaced by resume
-                </div>
-            </div>
-        </div>
+                </Col>
+                <Col sm={6} className={styles.resume_right}>
+                <Resume
+                  ref={resumeRef}
+                  sections={sections}
+                  information={resumeInformation}
+                  activeColor={activeColor}
+                />
+                </Col>
+            </Row>
+        </Container>
     </div>
   )
 }
