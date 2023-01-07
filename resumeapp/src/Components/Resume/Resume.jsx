@@ -80,7 +80,7 @@ const Resume = forwardRef((props, ref) => {
               )}
               {item.location ? (
                 <p className={styles.date}>
-                  <MapPin /> Remote
+                  <MapPin /> {item.location}
                 </p>
               ) : (
                 <span />
@@ -179,7 +179,7 @@ const Resume = forwardRef((props, ref) => {
                 <span />
               )}
               {item.college ? (
-                <p className={styles.subTitle}>Some college name</p>
+                <p className={styles.subTitle}>{item.college}</p>
               ) : (
                 <span />
               )}
@@ -304,8 +304,8 @@ const Resume = forwardRef((props, ref) => {
   }, [props.activeColor]);
 
   return (
-    <div ref={ref}>
-      <div ref={containerRef} className={styles.container}>
+    <div ref={ref} className={styles.reference}>
+      <div ref={containerRef} className={styles.container3}>
         <div className={styles.header}>
           <p className={styles.heading}>{info.basicInfo?.detail?.name}</p>
           <p className={styles.subHeading}>{info.basicInfo?.detail?.title}</p>
@@ -341,15 +341,16 @@ const Resume = forwardRef((props, ref) => {
             )}
           </div>
         </div>
-
-        <div className={styles.main}>
-          <div className={styles.col1}>
-            {columns[0].map((item) => sectionDiv[item])}
+        <div>
+          <div className={styles.main}>
+            <div className={styles.col1}>
+              {columns[0].map((item) => sectionDiv[item])}
+            </div>
+            <div className={styles.col2}>
+              {columns[1].map((item) => sectionDiv[item])}
+            </div>
           </div>
-          <div className={styles.col2}>
-            {columns[1].map((item) => sectionDiv[item])}
           </div>
-        </div>
       </div>
     </div>
   );

@@ -1,32 +1,37 @@
-import React, { useRef, useState } from "react";
+import  { React,useRef, useState,useContext } from "react";
 import Resume from "../Resume/Resume";
+import Navbar from '../Navbar/Navbar';
+import Editor from "../Editor/Editor";
+import styles from "./Body.module.css";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ReactToPrint from "react-to-print";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import { Printer,Download } from "react-feather";
-import Editor from "../Editor/Editor";
-import styles from "./Body.module.css";
-import { useContext } from "react";
 import { themeContext } from "../../Context";
-import Navbar from '../Navbar/Navbar';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from 'react-router-dom';
 
 function Body() {
   const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
-
-  const color =['#850000','#790252','#2B3467','#285430','#227C70']
+  const pdfGenerate = async () => {
+    const element = resumeRef.current;
+    const canvas = await html2canvas(element);
+    const data = canvas.toDataURL('image/png');
+    const pdf = new jsPDF("portrait","pt","a4",true);
+    const imgProperties = pdf.getImageProperties(data);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight =
+    (imgProperties.height * pdfWidth) / imgProperties.width;
+    pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
+    pdf.save('Resume.pdf');};
+  const color =['#A91079','#0081C9','#379237','#D36B00','#FF5B00','#D2001A']
   const sections = {
-    basicInfo: "Basic Info",
-    workExp: "Work Experience",
-    project: "Projects",
+    basicInfo: "Basics",
+    workExp: "Experience",
+    project: "Project",
     education: "Education",
-    achievement: "Achievements",
+    achievement: "Achievement",
     summary: "Summary",
     other: "Other",
   };
@@ -73,7 +78,7 @@ function Body() {
   return (
     <div className={styles.main}>
         <Navbar></Navbar>
-        <Container className={styles.container}>
+        <Container className={styles.container1}>
             <Row className={styles.row}>
                 <Col sm={6} className={styles.editor_left}>
                     <div className={styles.toolbar}>
@@ -89,9 +94,19 @@ function Body() {
                             />
                           ))}
                         </div>
-                        <span style={{color: darkMode? 'black': ''}} className={styles.empty}>```````````</span>
-                        <div href='#' className={styles.button_print}>Print<Printer/></div>
-                        <div href='#' className={styles.button_download}>Download<Download/></div>
+                          <ReactToPrint
+                              trigger={() => {
+                                return (
+                                  <div  className={styles.button_print}>
+                                    Print<Printer/>
+                                    </div>
+                                );
+                              }}
+                              content={() => resumeRef.current}
+                          />
+                        <div  
+                        className={styles.button_download}
+                        onClick={pdfGenerate} type='button'>Download<Download/></div>
                     </div>
                     <div className={styles.editor}>
                     <Editor 

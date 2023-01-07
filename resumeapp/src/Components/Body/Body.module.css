@@ -1,32 +1,40 @@
-.container{
-    padding:20px;
+.container1{
+  background-color: #181818;
+    padding-left:15px;
+    padding-right:15px;
 }
 .row{
   padding-left: 10px;
 }
-.container .editor_left{
+.container1 .editor_left{
+    margin-top: 35px;
     text-align: left;
     width:fit-content;
     height:fit-content;
 }
-.container .resume_right{
-    text-align: right;
+.container1 .resume_right{
+  margin-top: 40px;
+  margin-left: auto;
+  padding-bottom: 30px;
 }
 .toolbar{
-  padding-bottom: 15px;
+    margin-bottom: 15px;
     width: 100%;
     display:flex;
-    gap: 15px;
-    justify-content:space-between;
+    justify-content:space-around;
     align-items:center ;
 }
 .palette{
+  background-color: #fff;
+  padding: 5px;
+  border-radius:10px;
     display: flex;
     justify-content: space-around;
 }
 .palette .color{
+  border: 2px solid transparent;
     background-color: rgb(0, 0, 0);
-    border-radius: 25%;
+    border-radius: 4px;
     margin: 5px;
     height: 36px;
     width: 36px;
@@ -34,143 +42,137 @@
     transition: all ease 0.5s;
 }
 .palette .color:hover {
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
+    border: 2px solid #181818;
+    box-shadow: 0px 3px 3px  rgba(40, 156, 251, 0.3);
     transform: translateY(3px);
   }
-.palette .color:active {
-    border: 2px solid rgb(0, 0, 0);
-  }
-  .toolbar .empty{
-    position:static;
-      color: #fff;
+.palette .active {
+    border: 2px solid #181818;
+    box-shadow: 5px 5px 4px rgba(40, 156, 251, 0.3);
+    transform: translateY(3px);
   }
   .toolbar .button_download {
-    padding: 8px 16px;
-    border-radius: 5px;
-    background-color: #239ce2;
-    color: #fff;
+    padding: 11px 15px 11px 20px;
+    border-radius: 34px;
+    border:1px solid transparent;
+    background: linear-gradient(130deg,#2fbafb 29.71%, #2f5ffb 99.36%);
+    color: white;
     outline: none;
-    border: none;
     font-weight: 500;
     letter-spacing: 1px;
     display: flex;
-    gap: 5px;
     align-items: center;
     cursor:pointer;
     transition: all ease 0.5s;
   }
   .toolbar .button_download:hover {
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
+    border:1px solid transparent;
+    box-shadow: 0px 7px 5px  rgba(234, 234, 234, 0.3);
     transform: translateY(3px);
   }
   .toolbar .button_download:active {
-    color: #000000;
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    color:#2f5ffb;
+    border:1px solid #2f5ffb;
+    box-shadow: 10px 10px 4px rgba(234, 234, 234, 0.3);
     transform: translateY(3px);
   }
   
   .toolbar .button_download svg {
     height: 20px;
     width: 20px;
-    background-color: #239ce2;
-  }
-  .toolbar .button_download svg:active {
-    height: 20px;
-    width: 20px;
-    color: #000000;
+    background-color: transparent;
   }
 .toolbar .button_print {
-    padding: 8px 16px;
-    border-radius: 5px;
-    background-color: #239ce2;
-    color: #fff;
+  padding: 11px 15px 11px 15px;
+    border-radius: 34px;
+    border:1px solid transparent;
+    background:  linear-gradient(130deg,#2fbafb 29.71%, #2f5ffb 99.36%);
+    color: white;
     outline: none;
-    border: none;
     font-weight: 500;
     letter-spacing: 1px;
     display: flex;
-    gap: 5px;
     align-items: center;
     cursor:pointer;
     transition: all ease 0.5s;
   }
   .toolbar .button_print:hover {
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
+    border:1px solid transparent;
+    box-shadow: 0px 7px 5px  rgba(234, 234, 234, 0.3);
     transform: translateY(3px);
   }
   .toolbar .button_print:active {
-    color: #000000;
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    color:#2f5ffb;
+    border:1px solid #2f5ffb;
+    box-shadow: 10px 10px 4px rgba(234, 234, 234, 0.3);
     transform: translateY(3px);
   }
   
   .toolbar .button_print svg {
     height: 20px;
     width: 20px;
-    background-color: #239ce2;
-  }
-  .toolbar .button_print svg:active {
-    height: 20px;
-    width: 20px;
-    color: #000000;
+    background-color: transparent;
   }
   @media only screen and (max-width:750px){
     .row{
-      margin-left: -110px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
     }
     .toolbar{
-      padding-right: 10px;
-        width: 30%;
-        height: 20%;
-        margin: 0px;
         display: grid;
     }
     .palette{
-      margin-top: 165px;
+      margin-top: 310px;
       position:fixed;
         display: grid;
-        padding: 10px;
     }
     .palette .color{
-        background-color: rgb(0, 0, 0);
+        background-color: rgba(40, 156, 251, 0.3);
         border-radius: 100%;
+        border: 2px solid transparent;
         height: 30px;
         width: 30px;
         cursor: pointer;
         transition: all ease 0.5s;
     }
     .palette .color:hover {
-        box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+      border: 2px solid #181818;
+        box-shadow: 0px 3px 3px rgba(40, 156, 251, 0.3);
         transform: translateX(2px);
       }
-    .palette .color:active {
-        border: 1px solid rgb(0, 0, 0);
+    .palette .active {
+      box-shadow: 5px 5px 4px rgba(40, 156, 251, 0.3);
+      border: 2px solid #181818;
       }
-    .toolbar .empty{
-      position:static;
-      margin-left:-11px;
-      color: #fff;
-    }
     .toolbar .button_print {
-      margin-top: 420px;
-        position:fixed;
-        text-indent: -999999px;
+      margin-top: 650px;
+      position:fixed;
+      text-indent: -999999px;
       }
     .toolbar .button_print:hover {
-        box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+        box-shadow: 5px 5px 3px rgba(234, 234, 234, 0.3);;
         transform: translateX(2px);
       }
       .toolbar .button_download {
-        margin-top: 520px;
+        padding: 11px 15px;
+        margin-top: 760px;
         position:fixed;
-          text-indent: -999999px;
+        text-indent: -999999px;
         }
       .toolbar .button_download:hover {
-          box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 5px 3px rgba(234, 234, 234, 0.3);
           transform: translateX(2px);
         }
       .container .editor_left{
-        margin-left: 100px;
+        width:fit-content;
+        height:fit-content;
+        display: flex;
+    }
+      .container1 .resume_right{
+        margin-top: 0px;
         width:fit-content;
         height:fit-content;
         display: flex;
