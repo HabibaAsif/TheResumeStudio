@@ -42,11 +42,11 @@
     transition: all ease 0.5s;
 }
 .palette .color:hover {
-    border: 2px solid #181818;
+    border: 2px solid transparent;
     box-shadow: 0px 3px 3px  rgba(40, 156, 251, 0.3);
     transform: translateY(3px);
   }
-.palette .active {
+.palette .color:active {
     border: 2px solid #181818;
     box-shadow: 5px 5px 4px rgba(40, 156, 251, 0.3);
     transform: translateY(3px);
@@ -122,6 +122,7 @@
       flex-direction: column;
     }
     .toolbar{
+      margin-top:-15px;
         display: grid;
     }
     .palette{
@@ -139,11 +140,11 @@
         transition: all ease 0.5s;
     }
     .palette .color:hover {
-      border: 2px solid #181818;
+      border: 2px solid transparent;
         box-shadow: 0px 3px 3px rgba(40, 156, 251, 0.3);
         transform: translateX(2px);
       }
-    .palette .active {
+    .palette .color:active {
       box-shadow: 5px 5px 4px rgba(40, 156, 251, 0.3);
       border: 2px solid #181818;
       }
@@ -172,9 +173,7 @@
         display: flex;
     }
       .container1 .resume_right{
-        margin-top: 0px;
-        width:fit-content;
-        height:fit-content;
+        margin-top: 20px;
         display: flex;
     }
   }
