@@ -13,6 +13,7 @@ export default function MainPage() {
       <AboutUs/> 
       <ContactUs/>
       <Template/>
+      <Help/>
       <Footer/>
     </div>
   )
