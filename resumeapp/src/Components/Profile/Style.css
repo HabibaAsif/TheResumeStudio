@@ -10,10 +10,35 @@
     --orangeCard: #fca61f73;
     --smboxShadow: -79px 51px 60px #00000014; 
 }
-
 .ediprofhover a p {display:none;}
 .ediprofhover a:hover p {display:block;}
+#h  {
+  display: -ms-flexbox;
+  /* display: flex; */
+  flex-wrap: nowrap;  /* flex-wrap: wrap; */
+  margin-right: -15px;
+  margin-left: -15px;
+}
 
+.row1 {
+ 
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: -15px;
+    margin-left: -15px;
+
+}
+
+.container {
+  padding: 5px;
+}
+
+
+body{
+  line-height: 1.5;
+  background-image: linear-gradient(to right,#DDF8FE,#e9c6ff);
+  ;
+}
 
 .sectionsep {
   background-color: #FCA61F;
