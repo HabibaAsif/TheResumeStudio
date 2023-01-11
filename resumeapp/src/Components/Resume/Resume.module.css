@@ -1,3 +1,6 @@
+.box{
+  box-shadow: 1px 1px 5px rgba(36, 45, 73, 0.4);
+}
 .container3 {
   color: #181818;
   --color: #239ce2;

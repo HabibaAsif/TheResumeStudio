@@ -11,8 +11,10 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { Printer,Download } from "react-feather";
 import { themeContext } from "../../Context";
+import Swal from 'sweetalert2';
 
 function Body() {
+  
   const theme = useContext(themeContext);
   const pdfGenerate = async () => {
     const element = resumeRef.current;
@@ -77,7 +79,7 @@ function Body() {
   });
   return (
     <div className={styles.main}>
-        <Navbar></Navbar>
+        <Navbar/>
         <Container className={styles.container1}>
             <Row className={styles.row}>
                 <Col sm={6} className={styles.editor_left}>
@@ -96,9 +98,11 @@ function Body() {
                         </div>
                           <ReactToPrint
                               trigger={() => {
+                                
                                 return (
                                   <div  className={styles.button_print}>
-                                    Print<Printer/>
+                                    Print
+                                    <Printer/>
                                     </div>
                                 );
                               }}

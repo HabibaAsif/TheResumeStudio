@@ -1,5 +1,4 @@
 .container1{
-  background-color: #181818;
     padding-left:15px;
     padding-right:15px;
 }
@@ -25,6 +24,7 @@
     align-items:center ;
 }
 .palette{
+  box-shadow: 1px 1px 4px rgba(36, 45, 73, 0.2);
   background-color: #fff;
   padding: 5px;
   border-radius:10px;
