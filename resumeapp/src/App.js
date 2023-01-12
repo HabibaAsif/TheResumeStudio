@@ -22,8 +22,6 @@ function App() {
             <Route path="/" element={<MainPage/>}/>
             <Route path="/editprofile" element={<EditProfile />} />
             <Route path="/profile" element={<Profile/>} />
-              
-
             </Routes>
           </Router></>
   );
