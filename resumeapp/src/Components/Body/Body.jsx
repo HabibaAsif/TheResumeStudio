@@ -18,6 +18,7 @@ function Body() {
   const theme = useContext(themeContext);
   const Alert = async () =>{
     Swal.fire({
+      icon:'question',
       title: 'Do you want to save your work ?',
       showDenyButton: true,
       showCancelButton: true,
@@ -30,7 +31,7 @@ function Body() {
         Swal.fire('Download Complete!', '', 'success')
         pdfGenerate.call()
       } else if (result.isDenied) {
-        Swal.fire('Rimsha Code', '', 'info')
+        Swal.fire('Rimsha Code', '', 'success')
 
       }
     })
