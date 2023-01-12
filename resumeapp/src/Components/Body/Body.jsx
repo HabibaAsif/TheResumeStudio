@@ -16,6 +16,25 @@ import Swal from 'sweetalert2';
 function Body() {
   
   const theme = useContext(themeContext);
+  const Alert = async () =>{
+    Swal.fire({
+      title: 'Do you want to save your work ?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Download',
+      denyButtonText: `Yes`,
+      denyButtonColor: "#2f8efb",
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Download Complete!', '', 'success')
+        pdfGenerate.call()
+      } else if (result.isDenied) {
+        Swal.fire('Rimsha Code', '', 'info')
+
+      }
+    })
+  }
   const pdfGenerate = async () => {
     const element = resumeRef.current;
     const canvas = await html2canvas(element);
@@ -110,7 +129,7 @@ function Body() {
                           />
                         <div  
                         className={styles.button_download}
-                        onClick={pdfGenerate} type='button'>Download<Download/></div>
+                        onClick={Alert} type='button'>Download<Download/></div>
                     </div>
                     <div className={styles.editor}>
                     <Editor 

@@ -1,3 +1,4 @@
+
 .container1{
     padding-left:15px;
     padding-right:15px;
@@ -53,9 +54,9 @@
   }
   .toolbar .button_download {
     padding: 11px 15px 11px 20px;
-    border-radius: 34px;
+    border-radius: 5px;
     border:1px solid transparent;
-    background: linear-gradient(130deg,#2fbafb 29.71%, #2f5ffb 99.36%);
+    background:  linear-gradient(130deg,#2fbafb 29.71%, #2f5ffb 99.36%);
     color: white;
     outline: none;
     font-weight: 500;
@@ -85,7 +86,7 @@
   }
 .toolbar .button_print {
   padding: 11px 15px 11px 15px;
-    border-radius: 34px;
+    border-radius: 5px;
     border:1px solid transparent;
     background:  linear-gradient(130deg,#2fbafb 29.71%, #2f5ffb 99.36%);
     color: white;
