@@ -19,10 +19,10 @@ function Body() {
   const Alert = async () =>{
     Swal.fire({
       icon:'question',
-      title: 'Do you want to save your work ?',
+      title: 'Do you also want to save your work ?',
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: 'Download',
+      confirmButtonText: 'Download Only',
       denyButtonText: `Yes`,
       denyButtonColor: "#2f8efb",
     }).then((result) => {
@@ -31,7 +31,7 @@ function Body() {
         Swal.fire('Download Complete!', '', 'success')
         pdfGenerate.call()
       } else if (result.isDenied) {
-        Swal.fire('Rimsha Code', '', 'success')
+        Swal.fire('Saved!', '', 'success')
 
       }
     })
