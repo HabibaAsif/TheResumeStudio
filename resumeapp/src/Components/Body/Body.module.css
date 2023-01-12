@@ -53,7 +53,7 @@
   }
   .toolbar .button_download {
     padding: 11px 15px 11px 20px;
-    border-radius: 34px;
+    border-radius: 5px;
     border:1px solid transparent;
     background: linear-gradient(130deg,#2fbafb 29.71%, #2f5ffb 99.36%);
     color: white;
@@ -149,7 +149,7 @@
       border: 2px solid #181818;
       }
     .toolbar .button_print {
-      margin-top: 650px;
+      margin-top: 670px;
       position:fixed;
       text-indent: -999999px;
       }
@@ -159,7 +159,7 @@
       }
       .toolbar .button_download {
         padding: 11px 15px;
-        margin-top: 760px;
+        margin-top: 810px;
         position:fixed;
         text-indent: -999999px;
         }

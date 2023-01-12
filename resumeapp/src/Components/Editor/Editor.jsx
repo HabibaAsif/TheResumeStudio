@@ -640,7 +640,7 @@ const workExpBody = (
           )}
         </div>
           {generateBody()}
-          <button  onClick={handleSubmission}>Save<Save/></button>
+          <button className={styles.save}  onClick={handleSubmission}>Save<Save/></button>
           </div>
       </div>
     </div>
