@@ -2,68 +2,35 @@ import React, { useState } from "react";
 import './ContactUs.css'
 import { useContext } from "react";
 import { themeContext } from "../../Context";
+import{ db } from './firebaseConfig';
+import { addDoc, collection } from "firebase/firestore";
+
 
 const Contact = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
 
-  const [userData, setUserData] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    email: "",
-    message: "",
-  });
+  const [firstName, setfirstName]=useState();
+  const [lastName, setlastName]=useState();
+  const [email, setEmail]=useState();
+  const [PhoneNumber, setPhoneNumber]=useState();
+  const [message, setMessage]=useState();
 
-  let name, value;
-  const postUserData = (event) => {
-    name = event.target.name;
-    value = event.target.value;
+  const userCollectionRef =collection(db, "contactdatabase");
 
-    setUserData({ ...userData, [name]: value });
-  };
-
-  // connect with firebase
-  const submitData = async (event) => {
-    event.preventDefault();
-    const { firstName, lastName, phone, email, message } = userData;
-
-    if (firstName && lastName && phone && email && message) {
-      const res = fetch(
-        "https://reactfirebasewebsite-default-rtdb.firebaseio.com/userDataRecords.json",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            firstName,
-            lastName,
-            phone,
-            email,
-            message,
-          }),
-        }
-      );
-
-      if (res) {
-        setUserData({
-          firstName: "",
-          lastName: "",
-          phone: "",
-          email: "",
-          message: "",
-        });
-        setDone(true)
-      } else {
-        alert("plz fill the data");
-      }
-    } else {
-      alert("plz fill the data");
-    }
-  };
-
-  const [done, setDone] = useState(false)
+  const handleSubmit=()=>{
+    addDoc(userCollectionRef,{
+      First_Name: firstName,
+      Last_Name: lastName,
+      Email: email,
+      Phone_Number: PhoneNumber,
+      Message: message
+    }).then(()=>{
+      if(!alert("Form Submitted Successfully!!!")) document.location = '/app.js'
+    }).catch((error) => {
+      alert(error.message)
+    })
+  }
 
   return (
     <>
@@ -82,67 +49,65 @@ const Contact = () => {
 
                 {/* right side contact form  */}
                 <div className="contact-rightside">
-                  <form method="POST">
+                  <form >
 
-                    <div className="row">
+                    <div className="row1">
                       <div className="contact-input-feild">
                         <input
                           type="text"
-                          name="firstName"
-                          id=""
                           className="form-control"
                           placeholder="First Name"
-                          value={userData.firstName}
-                          onChange={postUserData}
+                          onChange={(event)=>{
+                              setfirstName(event.target.value);
+                          }}
                         />
+
                       </div>
-                      <div className="contact-input-feild">
+                      <div  className="contact-input-feild">
                         <input
                           type="text"
-                          name="lastName"
-                          id=""
                           className="form-control"
                           placeholder="Last Name"
-                          value={userData.lastName}
-                          onChange={postUserData}
+                          onChange={(event)=> {
+                            setlastName(event.target.value);
+                          }}
                         />
+
                       </div>
                     </div>
-                    <div className="row">
+                    <div className="row1">
                       <div className="contact-input-feild">
                         <input
-                          type="int"
-                          name="phone"
-                          id=""
+                          type="integer"
                           className="form-control"
                           placeholder="Phone Number "
-                          value={userData.phone}
-                          onChange={postUserData}
+                          onChange={(event)=>{
+                            setPhoneNumber(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="contact-input-feild">
                         <input
                           type="email"
-                          name="email"
-                          id=""
                           className="form-control"
                           placeholder="Email ID"
-                          value={userData.email}
-                          onChange={postUserData}
+                          onChange={(event)=>{
+                            setEmail(event.target.value);
+                          }}
                         />
+
                       </div>
                     </div>
 
-                    <div className="row message-box">
+                    <div className="row1 message-box">
                       <div>
-                        <textarea
+                        <textarea 
                           type="text"
-                          name="message"
-                          id=""
                           className="form-control"
                           placeholder="Enter Your Message"
-                          value={userData.message}
-                          onChange={postUserData}
+                          onChange={(event)=>{
+                            setMessage(event.target.value);
+                          }}
                         />
                       </div>
                     </div>
@@ -162,13 +127,15 @@ const Contact = () => {
                     </div>
 
                     <button
+                      onClick={handleSubmit}
                       type="submit"
                       className="button"
-                      onClick={submitData}>
+                      //onClick={submitData}}
+                      >
                       Submit
                     </button>
 
-                    <span className="static-msg">{done && "Thanks for your feedback.." }</span>
+                    <span className="static-msg"></span>
                     
                   <div className="blur c-blurl"
                      style={{ background: "var(--purple)"}}></div>
