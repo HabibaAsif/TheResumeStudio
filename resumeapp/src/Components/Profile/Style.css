@@ -35,6 +35,12 @@
 }
 
 
+body{
+  line-height: 1.5;
+  background-image: linear-gradient(to right,#DDF8FE,#e9c6ff);
+  ;
+}
+
 .sectionsep {
   background-color: #FCA61F;
   height: 2px;
@@ -62,7 +68,7 @@
 
 
 .font-weight{
-  font-size: x-large;
+  font-size: large;
   font-weight: 300;
 }
 .font-weight-bold{
@@ -126,8 +132,6 @@ a.list-group-item{
     margin-top: 0;
   }
 }
-
-
 
 
 body{

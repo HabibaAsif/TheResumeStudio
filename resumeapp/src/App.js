@@ -12,7 +12,6 @@ import EditProfile from "./Components/Profile/EditProfile";
 import Profile from "./Components/Profile/Profile";
 import MainPage from "./Components/MainPage";
 import Body from "./Components/Body/Body";
-import Popup from "./Components/Resumeupload/Popup";
 function App() {
  
   return (
@@ -20,14 +19,13 @@ function App() {
     <Router>
             <Routes>
             <Route path="/resume" element={<Body/>} />
-            <Route path="/uploadresume" element={<Popup/>} />
-
             <Route path="/" element={<MainPage/>}/>
             <Route path="/editprofile" element={<EditProfile />} />
             <Route path="/profile" element={<Profile/>} />
+              
+
             </Routes>
-    </Router>
-    </>
+          </Router></>
   );
 }
 

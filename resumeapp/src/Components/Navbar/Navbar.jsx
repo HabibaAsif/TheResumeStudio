@@ -20,7 +20,7 @@ const Navbar = () => {
                 <ul>
                 <span> <Link to="/"> Home</Link></span>
                 <span> <Link to="/resume"> Build Resume</Link></span>
-                    <li><Link to="/uploadresume"> GetStarted</Link></li>
+                    <li>GetStarted</li>
                 </ul>
             </div>
         <div className="n-profile">

@@ -9,25 +9,33 @@ import Col from 'react-bootstrap/Col';
 import ReactToPrint from "react-to-print";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import { Printer,Download,Upload } from "react-feather";
+import { Printer,Download } from "react-feather";
 import { themeContext } from "../../Context";
-import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 
 function Body() {
-  ////////////////////////////////////////
-  const [file , setFile] = useState([])
-  const [resumelist , setresumelist] = useState([])
-  const [resume , setresume] = useState('')
-
-  // handle file upload
-  const fileInputField = useRef(null);
- 
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  //////////////////////////////////////
+  
   const theme = useContext(themeContext);
+  const Alert = async () =>{
+    Swal.fire({
+      icon:'question',
+      title: 'Do you also want to save your work ?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Download Only',
+      denyButtonText: `Yes`,
+      denyButtonColor: "#2f8efb",
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Download Complete!', '', 'success')
+        pdfGenerate.call()
+      } else if (result.isDenied) {
+        Swal.fire('Saved!', '', 'success')
+
+      }
+    })
+  }
   const pdfGenerate = async () => {
     const element = resumeRef.current;
     const canvas = await html2canvas(element);
@@ -122,11 +130,8 @@ function Body() {
                           />
                         <div  
                         className={styles.button_download}
-                        onClick={pdfGenerate} type='button'>Download<Download/></div>
+                        onClick={Alert} type='button'>Download<Download/></div>
                     </div>
-                   
-                   
-                    
                     <div className={styles.editor}>
                     <Editor 
                     sections={sections}
