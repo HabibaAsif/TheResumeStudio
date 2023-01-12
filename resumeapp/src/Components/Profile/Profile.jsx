@@ -2,21 +2,53 @@ import React from 'react'
 import "./Style.css";
 import Navbar from '../Navbar/Navbar';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { useContext } from "react";
+import { themeContext } from "../../Context";
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
+   Link
 } from 'react-router-dom';
 import EditProfile from './EditProfile';
 //import setBodyImage from '../setBodyImage';
 
 export default function Profile() {
-  //setBodyImage({bgimg:"linear-gradient(to right,#DDF8FE,#e9c6ff,#fca61f73)"});
 
+  //setBodyImage({bgimg:"linear-gradient(to right,#DDF8FE,#e9c6ff,#fca61f73)"});
   //let url="https://www.w3schools.com/react/react_css_styling.asp";
-  return (
-    <>
+///////////////////////////////////////HTML FOR RESUME LIST////////////////////
+
+  ////////////////////////////GET RESUME////////////////////////////////////
+  /*
+  const [file , setFile] = useState([])
+  const [resume , setresume] = useState('')
+
+       const getdocbyq=async(id)=>{
+  const collref=collection(firestore,'resumes')
+  const q=query(collref,where ("user_id","==",id))
+  const docrefs=await getDocs(q);
+  //console.log(docrefs)
+const res=[]
+docrefs.forEach(resume=>{
+  res.push({
+    id:resume.id,...resume.data()
+})
+})
+setFile(res)
+
+}
+getdocbyq("04")
+   */
+const theme = useContext(themeContext);
+const darkMode = theme.state.darkMode;
+return (
+  <>
+  <div className="App"
+  style={{
+  background: darkMode ? "black" : "",
+  color: darkMode ? "white" : "",
+  }}
+  >
+  
+    
     <title>Profile</title>
     <link rel="stylesheet" href="Style.css"/>
 
@@ -29,29 +61,27 @@ export default function Profile() {
     {/* Material Design Bootstrap */}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
 <Navbar></Navbar>
+</div>
+<div className="App"
+  style={{
+  background: darkMode ? "black" : "",
+  }}
+  >
     <div  className="container">
       <div className="row d-flex justify-content-center">
-        <div className="col-md-10 mt-5 pt-5">
-          <div className="row z-depth-3">
-            <div id="lefheader_profile" className="col-sm-3  rounded-left">
-              <div className="card-block text-center text-white">
-                <i className="fas fa-user-tie fa-7x mt-5" />
-                <h2 className="font-weight-bold mt-4">Nickson</h2>
-               
-                <div className="ediprofhover">
-                <Link to="/editprofile">
-                <i className="far fa-edit fa-2x mb-4" style={{color:'#ac2bfc'}}> </i>
+        <div className="col-md-10 mt-3 pt-4">
+          <div className="row1 z-depth-3">
+            <div className="col-sm-12 bg-white rounded-right">
+
+              <h3 className="mt-3 text-center"> Profile<div className="ediprofhover">
+                <Link style={{color:'#FCA61F'}} to="/editprofile">
+                <i className="far fa-edit fa-2x mb-4" style={{color:'#FCA61F'}}> </i>
                 <p>Edit Profile</p></Link>
-   
-               </div>
-              </div>
-            </div>
-            <div className="col-sm-9 bg-white rounded-right">
-              <h3 className="mt-3 text-center">Profile</h3>
+               </div></h3>
               <hr className="sectionsep"/>
-              <div className="row" >
+              <div className="row1" >
                 <div className="col-sm-6">
-                  <p className="font-weight-bold">First Name</p>
+                  <p  className="font-weight-bold">First Name</p>
                   <h6 className=" text-muted">Nick</h6>
                 </div>
                 <div className="col-sm-6">
@@ -59,7 +89,7 @@ export default function Profile() {
                   <h6 className=" text-muted">Name</h6>
                 </div>
                 </div>
-              <div className="row">
+              <div className="row1">
                 <div className="col-sm-6">
                   <p className="font-weight-bold">Email</p>
                   <h6 className=" text-muted">nick32@gmail.com</h6>
@@ -72,7 +102,7 @@ export default function Profile() {
               
               <h3 className="mt-3 text-center">Saved Resumes</h3>
               <hr className="sectionsep" />
-              <div className="row">
+              <div className="row1">
                 <div className="col-sm-6">
                   <ListGroup>
                 <ListGroup.Item  action variant="light" href="#link1" elementType="button"  > 
@@ -98,6 +128,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   </>
         );

@@ -10,6 +10,7 @@
     --orangeCard: #fca61f73;
     --smboxShadow: -79px 51px 60px #00000014; 
 }
+
 .ediprofhover a p {display:none;}
 .ediprofhover a:hover p {display:block;}
 #h  {
@@ -64,7 +65,6 @@ body{
     flex:1;
     gap: 10px;
   }
-
 
 
 .font-weight{
@@ -134,8 +134,9 @@ a.list-group-item{
 }
 
 
- 
-
 body{
   margin: 0;
+  line-height: 1.5;
+  background-image: linear-gradient(to right,#DDF8FE,#e9c6ff);
+  ;
 }
