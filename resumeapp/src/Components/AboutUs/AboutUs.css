@@ -54,4 +54,16 @@
     font-size: 2rem;
     font-weight: bold;
   }
-  
+
+  @media screen and (max-width: 480px) {
+    .about{
+        flex-direction: column;
+        margin-top: 0;
+        gap: 5rem;
+
+    }
+   /* .about-text{
+        display: flex;
+        flex-direction: column;
+    }  */  
+}

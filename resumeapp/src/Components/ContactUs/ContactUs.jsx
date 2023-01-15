@@ -76,7 +76,7 @@ const Contact = () => {
                       </div>
                     </div>
                     <div className="row1">
-                      <div className="contact-input-feild">
+                      <div className="contact-input-feild2">
                         <input
                           type="integer"
                           className="form-control"

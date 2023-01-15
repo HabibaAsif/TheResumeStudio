@@ -41,6 +41,7 @@ const theme = useContext(themeContext);
 const darkMode = theme.state.darkMode;
 return (
   <>
+  <Navbar/>
   <div className="App"
   style={{
   background: darkMode ? "black" : "",
@@ -60,7 +61,7 @@ return (
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
     {/* Material Design Bootstrap */}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
-<Navbar></Navbar>
+
 </div>
 <div className="App"
   style={{

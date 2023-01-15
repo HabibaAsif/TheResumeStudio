@@ -1,7 +1,6 @@
 import React from 'react'
 import Resume1 from "../../img/resume1.png";
 import Resume2 from "../../img/resume2.png";
-import Card from '../Card/Card';
 import './UpperPart.css'
 import { useContext } from "react";
 import { themeContext } from "../../Context";

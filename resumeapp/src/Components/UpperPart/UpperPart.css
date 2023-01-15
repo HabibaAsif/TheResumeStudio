@@ -1,7 +1,7 @@
 .header{
     display: flex;
     height: 77vh;
-    margin-top: 6rem;
+    margin: 100px;
 }
 
 .head-left{
@@ -75,3 +75,10 @@
     top: -18%;
     left: 56%;
 }
+
+
+@media screen and (max-width: 480px) {
+    .head-left{
+        flex-direction: column;
+    }
+  }
