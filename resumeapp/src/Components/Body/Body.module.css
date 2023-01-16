@@ -115,6 +115,9 @@
     width: 20px;
     background-color: transparent;
   }
+  .upload{
+    background-color: #181818;
+  }
   @media only screen and (max-width:750px){
     .row{
       margin-top: 10px;

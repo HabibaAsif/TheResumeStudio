@@ -12,6 +12,7 @@
     border-radius: 20px;
     background-color: white;
     box-shadow: 1px 1px 5px rgba(36, 45, 73, 0.3);
+    color:#181818;
   }
 .header{
   display: flex;

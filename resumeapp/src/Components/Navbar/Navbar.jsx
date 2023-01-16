@@ -8,7 +8,7 @@ const Navbar = () => {
     const navigate=useNavigate()
     const buildresume=()=>{
      navigate('/resume')
-    }      
+    }       
   return (
     <div className="n-wrapper">
         <div className="n-left">

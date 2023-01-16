@@ -1,8 +1,8 @@
 import React from "react";
 
-import styles from "./InputControl.css";
+import styles from "./InputControl1.css";
 
-function InputControl({ label, ...props }) {
+function InputControl1({ label, ...props }) {
   return (
     <div className={styles.main}>
       <div className={styles.container3}>
@@ -16,4 +16,4 @@ function InputControl({ label, ...props }) {
   );
 }
 
-export default InputControl;
+export default InputControl1;
