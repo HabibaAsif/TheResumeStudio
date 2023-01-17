@@ -134,3 +134,65 @@ body #profile{
   line-height: 1.5;
   background-image: linear-gradient(to right,#DDF8FE,#e9c6ff);
 }
+
+.icon-rtle {
+  padding-left: 25px;
+  background: url("envelope.png") no-repeat left;  
+  background-size: 25px;
+  background-position-x: left;
+  background-position-x: 7px;
+}
+.icon-rtlfn {
+  padding-left: 25px;
+  background: url("user.png") no-repeat left;  
+  background-size: 25px;
+  background-position-x: left;
+  background-position-x: 7px;
+}
+
+.icon-rtlln {
+  padding-left: 25px;
+  background: url("id-badge.png") no-repeat left;  
+  background-size: 25px;
+  background-position-x: left;
+  background-position-x: 7px;
+}
+.icon-rtlp {
+  padding-left: 25px;
+  background: url("phone-call.png") no-repeat left;  
+  background-size: 25px;
+  background-position-x: left;
+  background-position-x: 7px;
+}
+.icon-rtlpw {
+  padding-left: 25px;
+  background: url("lock.png") no-repeat left;  
+  background-size: 25px;
+  background-position-x: left;
+  background-position-x: 7px;
+}
+
+.icon-rtle:focus {
+  border: 2px solid #eed2ff;
+  background: white ;
+}
+.icon-rtlfn:focus {
+  border: 2px solid #eed2ff;
+  background: white ;
+}
+.icon-rtlln:focus {
+  border: 2px solid #eed2ff;
+  background: white ;
+}
+.icon-rtlfn:focus {
+  border: 2px solid #eed2ff;
+  background: white ;
+}
+.icon-rtlp:focus {
+  border: 2px solid #eed2ff;
+  background: white ;
+}
+.icon-rtlpw:focus {
+  border: 2px solid #eed2ff;
+  background: white ;
+}
