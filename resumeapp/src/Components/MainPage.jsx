@@ -5,14 +5,18 @@ import ContactUs from './ContactUs/ContactUs'
 import Template from './TemplateSlider/Template'
 import Footer from './Footer/Footer'
 import UpperPart from './UpperPart/UpperPart'
+import Help from './Help/Help'
+
+
 export default function MainPage() {
   return (
     <div>
-        <Navbar/>
+      <Navbar/>
       <UpperPart/>
       <AboutUs/> 
       <ContactUs/>
       <Template/>
+      <Help/>
       <Footer/>
     </div>
   )

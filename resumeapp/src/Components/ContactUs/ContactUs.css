@@ -32,7 +32,7 @@
 }
 
 .contact-input-feild {
-  margin: 10px;
+  margin-bottom: 0rem;
   height: 3rem;
   font-size: 2em;
 }
@@ -65,9 +65,8 @@
 
 
 .message-box{
-  padding-left: 10px;
   display: flex;
-  margin-top: 30px;
+  margin-top: 4px;
 }
 
 textarea{

@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import './ContactUs.css'
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { themeContext } from "../../Context";
 import{ db } from './firebaseConfig';
 import { addDoc, collection } from "firebase/firestore";
 
 
+// import {contactFormSchema} from "../../schemas/schema.jsx"
+
 const Contact = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
+
+  const navigate = useNavigate();
+  const [errorMsg, setErrorMsg] = useState("");
+  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
   const [firstName, setfirstName]=useState();
   const [lastName, setlastName]=useState();
@@ -16,25 +23,30 @@ const Contact = () => {
   const [PhoneNumber, setPhoneNumber]=useState();
   const [message, setMessage]=useState();
 
-  const userCollectionRef =collection(db, "contactdatabase");
+  const userCollectionRef =collection(db, "contactdata");
 
   const handleSubmit=()=>{
+
+    if (!firstName || !lastName || !email ||!PhoneNumber|| !message) {
+      setErrorMsg("Fill all fields");
+      return;
+    }
+    setErrorMsg("");
+
+  
+
     addDoc(userCollectionRef,{
       First_Name: firstName,
       Last_Name: lastName,
       Email: email,
       Phone_Number: PhoneNumber,
       Message: message
-    }).then(()=>{
-      if(!alert("Form Submitted Successfully!!!")) document.location = '/app.js'
-    }).catch((error) => {
-      alert(error.message)
     })
   }
 
   return (
     <>
-      <section className="contactus-section">
+      <section className="contactus-section" id='ContactUs'>
         <div className="contactus-text">
                 <div className="contactus-heading">
                   <span style={{color: darkMode? 'white': ''}}>
@@ -76,7 +88,7 @@ const Contact = () => {
                       </div>
                     </div>
                     <div className="row1">
-                      <div className="contact-input-feild2">
+                      <div className="contact-input-feild">
                         <input
                           type="integer"
                           className="form-control"
@@ -88,7 +100,7 @@ const Contact = () => {
                       </div>
                       <div className="contact-input-feild">
                         <input
-                          type="email"
+                          type="string"
                           className="form-control"
                           placeholder="Email ID"
                           onChange={(event)=>{

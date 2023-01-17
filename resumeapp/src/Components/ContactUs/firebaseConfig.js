@@ -1,17 +1,18 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDS8lsroNZjLb6XoU_LKPd1Q9X9Mpp3P18",
-  authDomain: "alainadatabase.firebaseapp.com",
-  projectId: "alainadatabase",
-  storageBucket: "alainadatabase.appspot.com",
-  messagingSenderId: "520097223067",
-  appId: "1:520097223067:web:8168399ed66b4e9bc0913e"
+  apiKey: "AIzaSyAE80GUJw-wWRdRGnpFry6KfONa_95q00A",
+  authDomain: "contactformdata-f3c0b.firebaseapp.com",
+  projectId: "contactformdata-f3c0b",
+  storageBucket: "contactformdata-f3c0b.appspot.com",
+  messagingSenderId: "116589951745",
+  appId: "1:116589951745:web:0db4ececb6b9e66668f900"
 };
 
 // Initialize Firebase

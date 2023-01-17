@@ -1,5 +1,5 @@
 .about{
-    padding: 0 3rem 0 3rem;
+    padding: 0px 28px 0px 0px;
     display: flex;
     height: 90vh;
     margin-bottom: 8rem;
@@ -16,7 +16,7 @@
 }
 
 .about-cards1{
-    flex: 1;
+    flex: 1.4;
     position: relative;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .about-cards2{
-    flex: 1;
+    flex: 1.1;
     position: relative;
 }
 

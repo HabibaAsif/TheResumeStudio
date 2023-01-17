@@ -4,13 +4,17 @@ import './AboutUs.css'
 import Crown from "../../img/crown.png"
 import { useContext } from "react";
 import { themeContext } from "../../Context";
+import { Link } from 'react-scroll';
 
 const AboutUs = () => {
+
+    const transition = { duration: 2, type: 'spring'}
+
     const theme = useContext(themeContext);
     const darkMode = theme.state.darkMode;
 
     return (
-        <div className='about'>
+        <div className='about' id='AboutUs'>
             <div className='about-text'>
                 <span style={{color: darkMode? 'var(--orange)': ''}}>About Us </span>
                 <span style={{color: darkMode? 'white': ''}}> One of the most time-consuming elements of applying for new jobs is customizing
@@ -26,7 +30,7 @@ const AboutUs = () => {
             <div className='about-cards1'> 
                 <span>Features</span>
                 <div>
-                <div ><FloatinDiv img={Crown}text1={"Awesome"} text2={"Resume Creation"}/></div>
+                <div><FloatinDiv img={Crown}text1={"Awesome"} text2={"Resume Creation"}/></div>
                 <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Update your Resume"} text2={"When Your Want!!"}/></div>
                 <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Generate"} text2={"Your Resume as PDF"}/></div>
                 </div>
@@ -34,10 +38,10 @@ const AboutUs = () => {
 
             <div className='about-cards2'>
             <div>
-                <div ><FloatinDiv img={Crown}text1={"S"} text2={"Resume Creation"}/></div>
-                <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Update your Resume "} text2={"When Your Want!!"}/></div>
-                <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Generate"} text2={"Your Resume as PDF"}/></div>
-            </div>
+                <div ><FloatinDiv img={Crown}text1={"Professional"} text2={"Resume Template"}/></div>
+                <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Easy And "} text2={"Simple To Use Website"}/></div>
+                <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Save Your"} text2={"Precious Time"}/></div>
+            </div> 
             </div>
           
         </div>

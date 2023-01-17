@@ -224,8 +224,7 @@ const workExpBody = (
       <div className={styles.row}>
         <InputControl1
           label="Name"
-          name='name'
-          placeholder="Enter Name"
+          placeholder="Enter your full name eg. Aashu"
           value={values.name}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, name: event.target.value }))
@@ -233,9 +232,8 @@ const workExpBody = (
         />
         <InputControl1
           label="Title"
-          name = 'title'
           value={values.title}
-          placeholder="Enter Title"
+          placeholder="Enter your title eg. Frontend developer"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, title: event.target.value }))
           }
@@ -244,7 +242,6 @@ const workExpBody = (
       <div className={styles.row}>
         <InputControl1
           label="Linkedin Link"
-          name ='linkedin'
           value={values.linkedin}
           placeholder="Enter your linkedin profile link"
           onChange={(event) =>
@@ -253,7 +250,6 @@ const workExpBody = (
         />
         <InputControl1
           label="Github Link"
-          name = 'github'
           value={values.github}
           placeholder="Enter your github profile link"
           onChange={(event) =>
@@ -263,9 +259,7 @@ const workExpBody = (
       </div>
       <div className={styles.row}>
         <InputControl1
-          name = 'email'
           label="Email"
-          type="email"
           value={values.email}
           placeholder="Enter your email"
           onChange={(event) =>
@@ -274,7 +268,6 @@ const workExpBody = (
         />
         <InputControl1
           label="Enter phone"
-          name ='phone'
           value={values.phone}
           placeholder="Enter your phone number"
           onChange={(event) =>

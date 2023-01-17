@@ -5,8 +5,10 @@
   border-radius: 17px;
   display: flex;
   align-items: center;
+  padding: 9px 28px 0px 0px;
   height: 4.5rem;
-  width: 12rem;
+  width: 220px;
+  margin-left:1px ;
 
 }
 .floatingDiv > img {

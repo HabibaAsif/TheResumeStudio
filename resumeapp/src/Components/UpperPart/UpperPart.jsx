@@ -4,8 +4,17 @@ import Resume2 from "../../img/resume2.png";
 import './UpperPart.css'
 import { useContext } from "react";
 import { themeContext } from "../../Context";
+import { useNavigate } from 'react-router-dom';
  
 const UpperPart = () => {
+
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = '/resume';
+    navigate(path);
+    
+  }
+
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
     return (
@@ -17,7 +26,7 @@ const UpperPart = () => {
                   <span style={{color: darkMode? 'white': ''}}>"If opportunity doesn't knock, build a door." ― Milton Berle..... That is why build your brand-new resume with our website for free.</span>
               </div>
   
-              <button className='button head-button' >Build Resume</button>
+              <button onClick={routeChange} className='button head-button' >Build Resume</button>
           </div>
 
           <div className="head-right">
