@@ -46,11 +46,7 @@ function App() {
     }}
     >
         <RouterProvider router={router}/>
-        <Router>
-          <Routes>
-            <Route path='/' element={<MainPage/>}/>
-          </Routes>
-        </Router>
+        
 
     
     </div>

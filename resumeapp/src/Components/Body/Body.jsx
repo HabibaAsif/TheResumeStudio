@@ -170,58 +170,60 @@ function Body() {
     },
   });
   return (
-    <div className={styles.main}>
-        <Navbar/>
-        <Container className={styles.container1}>
-            <Row className={styles.row}>
-                <Col sm={6} className={styles.editor_left}>
-                    <div className={styles.toolbar}>
-                        <div className={styles.palette}>
-                        {color.map((item) => (
-                            <span
-                              key={item}
-                              style={{ backgroundColor: item }}
-                              className={`${styles.color} ${
-                                activeColor === item ? styles.active : ""
-                              }`}
-                              onClick={() => setActiveColor(item)}
+    <div className={styles.builder}>
+      <div className={styles.main}>
+          <Navbar/>
+          <Container className={styles.container1}>
+              <Row className={styles.row}>
+                  <Col sm={6} className={styles.editor_left}>
+                      <div className={styles.toolbar}>
+                          <div className={styles.palette}>
+                          {color.map((item) => (
+                              <span
+                                key={item}
+                                style={{ backgroundColor: item }}
+                                className={`${styles.color} ${
+                                  activeColor === item ? styles.active : ""
+                                }`}
+                                onClick={() => setActiveColor(item)}
+                              />
+                            ))}
+                          </div>
+                            <ReactToPrint
+                                trigger={() => {
+                                  
+                                  return (
+                                    <div  className={styles.button_print}>
+                                      Print
+                                      <Printer/>
+                                      </div>
+                                  );
+                                }}
+                                content={() => resumeRef.current}
                             />
-                          ))}
-                        </div>
-                          <ReactToPrint
-                              trigger={() => {
-                                
-                                return (
-                                  <div  className={styles.button_print}>
-                                    Print
-                                    <Printer/>
-                                    </div>
-                                );
-                              }}
-                              content={() => resumeRef.current}
-                          />
-                        <div  
-                        className={styles.button_download}
-                        onClick={Alert} type='button'>Download<Download/></div>
-                          
-                    </div>
-                    <div className={styles.editor}>
-                    <Editor 
+                          <div  
+                          className={styles.button_download}
+                          onClick={Alert} type='button'>Download<Download/></div>
+                            
+                      </div>
+                      <div className={styles.editor}>
+                      <Editor 
+                      sections={sections}
+                      information={resumeInformation}
+                      setInformation={setResumeInformation}/>
+                      </div>
+                  </Col>
+                  <Col sm={6} className={styles.resume_right}>
+                  <Resume
+                    ref={resumeRef}
                     sections={sections}
                     information={resumeInformation}
-                    setInformation={setResumeInformation}/>
-                    </div>
-                </Col>
-                <Col sm={6} className={styles.resume_right}>
-                <Resume
-                  ref={resumeRef}
-                  sections={sections}
-                  information={resumeInformation}
-                  activeColor={activeColor}
-                />
-                </Col>
-            </Row>
-        </Container>
+                    activeColor={activeColor}
+                  />
+                  </Col>
+              </Row>
+          </Container>
+      </div>
     </div>
   )
 }

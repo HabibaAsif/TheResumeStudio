@@ -1,4 +1,7 @@
+.reference{
+  box-shadow: 1px 1px 5px rgba(36, 45, 73, 0.3);
 
+}
 .container3 {
   color: #181818;
   --color: #239ce2;
@@ -12,6 +15,7 @@
   width: 555px;
   padding: 60px;
   margin-left: 10px;
+  
 }
 
 .header {
