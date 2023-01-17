@@ -28,60 +28,47 @@ export default function EditProfile() {
 
         <div  className="container">
           <form>
-          <div className="row1 d-flex justify-content-center">
-            <div className="col-md-10 mt-4 pt-4">
-              <div className="row z-depth-3">
-              
-                <div className="col-sm-12 bg-white rounded-right">
-                  <h3 className="mt-3 text-center">Edit Profile</h3>
-                  <hr className="sectionsep"/>
-                  <div className="row1">
-                    <div className="col-sm-6">
-                      <p className="font-weight">First Name</p>
-                        <input  type='text' />
+      <div className="row1 d-flex justify-content-center">
+        <div className="col-md-10 mt-4 pt-4">
+          <div className="row z-depth-3">
+           
+            <div className="col-sm-12 bg-white rounded-right">
+              <h3 className="mt-3 text-center">Edit Profile</h3>
+              <hr className="sectionsep"/>
+              <div className="row1">
+                <div className="col-sm-6">
+                  <p className="font-weight">First Name</p>
+                    <input className="icon-rtlfn" type='text' />
 
-                    </div>
-                    <div className="col-sm-6">
-                      <p className="font-weight">Last Name</p>
-                      <input  type='text'/>
-                    </div>
-                    </div>
-                    <br>
-                  </br>
-                  <div className="row1">
-                    <div className="col-sm-6">
-                      <p className="font-weight">Email</p>
-                      <input type='text'/>
-                    </div>
-                    <div className="col-sm-6">
-                      <p className="font-weight">Phone</p>
-                      <input type='tel'/>
-                    </div>
-                  </div>
-                  <br>
-                  </br>
-                  <div className="row1">
-                    <div className="col-sm-6">
-                      <p className="font-weight">Password</p>
-                      <input type='password'/>
-                    </div>
-                    </div>
-                    <br>
-                  </br>
-                  <div className="row1">
-
-                  <button  type="submit"  defaultValue="submit">Save</button>
-                  </div>
-                  
                 </div>
-              
+                <div className="col-sm-6">
+                  <p className="font-weight">Last Name</p>
+                  <input className="icon-rtlln" type='text'/>
+                </div>
+                </div>
+                <br>
+              </br>
+              <div className="row1">
+                <div className="col-sm-6">
+                  <p className="font-weight">Phone</p>
+                  <input className="icon-rtlp" type='tel'/>
+                </div>
+                
+                <div className="col-sm-6">
+                  <p className="font-weight">Password</p>
+                  <input className="icon-rtlpw" type='password'/>
+                </div></div>
+                <br>
+              </br>
+              <div className="row1">
+              <button  type="submit"  defaultValue="submit">Save</button>
               </div>
             </div>
           </div>
-          </form>
-          
         </div>
-
+      </div>
+      </form>
+        </div>
         </>
   )
 }
