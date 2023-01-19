@@ -28,7 +28,7 @@ const Navbar = () => {
     }
 
     const routeChangeLogin  = () => {
-      let path = '/login';
+      let path = '/signup';
       navigate(path);
     }
 

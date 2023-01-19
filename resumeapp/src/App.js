@@ -8,6 +8,9 @@ import { themeContext } from "./Context";
 import Body from './Components/Body/Body';
 import Profile from './Components/Profile/Profile';
 import MainPage from './Components/MainPage';
+import EditProfile from "./Components/Profile/EditProfile";
+import Signup from "./Components/Signup/Signup"
+import Login from "./Components/Login/Login";
 
 import {
   createBrowserRouter,
@@ -30,6 +33,18 @@ const router = createBrowserRouter([
   {
     path: "profile",
     element: <Profile/>,
+  },
+  {
+    path: "editprofile",
+    element: <EditProfile/>,
+  },
+  {
+    path: "signup",
+    element: <Signup/>,
+  },
+  {
+    path: "login",
+    element: <Login/>,
   },
 
 ]);

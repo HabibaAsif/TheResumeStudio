@@ -3,7 +3,7 @@ import './ContactUs.css'
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { themeContext } from "../../Context";
-import{ db } from './firebaseConfig';
+import{ db } from '../../firebase';
 import { addDoc, collection } from "firebase/firestore";
 
 
