@@ -10,7 +10,7 @@ function InputControl1({ label, ...props }) {
           {label && <label>{label}</label>}
           
         </div>
-        <input type="text" {...props} />
+        <input type="link" {...props} />
       </div>
     </div>
   );

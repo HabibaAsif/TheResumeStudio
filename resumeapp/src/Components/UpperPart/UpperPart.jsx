@@ -30,10 +30,12 @@ const UpperPart = () => {
           </div>
 
           <div className="head-right">
-
+            <div className='yellow'></div>
+            <div className='blue-dark'style={{background: darkMode? '':"url('/src/img/yellow.png')"}}></div>
+            <div className='blue-light'></div>
             {/*blur div*/}
-            <div className='blur' style={{background : "rgb(238 210 255)"}}> </div>
-            <div className='blur' style={{background: '#C1F5FF',top: '17rem', width: '21rem' ,height: '11rem', left: '-9rem'}}> </div>
+            {/* <div className='blur' style={{background : "rgb(238 210 255)"}}> </div>
+            <div className='blur' style={{background: '#C1F5FF',top: '17rem', width: '21rem' ,height: '11rem', left: '-9rem'}}> </div> */}
           </div>
   
         </div>
