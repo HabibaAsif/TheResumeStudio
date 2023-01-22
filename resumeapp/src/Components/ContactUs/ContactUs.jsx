@@ -71,9 +71,9 @@ const Contact = () => {
                 <div className="contact-rightside">
                   <form onSubmit={(e)=>{onSubmitHandler(e)}}>
 
-                    <div className="row1">
-                      <div className="contact-input-field">
-                        <input
+                    <div className="row-contact">
+                      
+                        <input 
                           type="text"
                           className="form-control"
                           placeholder="First Name"
@@ -84,7 +84,7 @@ const Contact = () => {
                         />
 
                       </div>
-                      <div  className="contact-input-field">
+                    <div className="row-contact">
                         <input 
                           type="text"
                           className="form-control"
@@ -95,10 +95,10 @@ const Contact = () => {
                           }}
                         />
 
-                      </div>
+                      
                     </div>
-                    <div className="row1">
-                      <div className="contact-input-field">
+                    <div className="row-contact">
+                      
                         <input
                           type="tel"
                           className="form-control"
@@ -109,19 +109,20 @@ const Contact = () => {
                           }}
                         />
                       </div>
-                      <div className="contact-input-field">
+                      <div className="row-contact">
                         <input
                           type="email"
+                          id='emailid'
                           className="form-control"
                           placeholder="Email ID"
                           value={email} maxlength='30' required={true} pattern='[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}'
                    title='*Please fill out this field in abc@gmail.com format ' onChange={(e)=>{ onChangeHandler("email",e.target.value)}}/>
 
-                      </div>
+                      
                     </div>
 
-                    <div className="row1 message-box">
-                      <div>
+                    <div className="row-contact">
+                      
                         <textarea 
                         required={true}
                           type="text"
@@ -131,7 +132,7 @@ const Contact = () => {
                             setMessage(event.target.value);
                           }}
                         />
-                      </div>
+                      
                     </div>
                     <div class="form-check form-checkbox-style">
                       <input
@@ -149,6 +150,7 @@ const Contact = () => {
                     </div>
 
                     <button
+                    id="submitbutton"
                       onClick={handleSubmit}
                       type="submit"
                       className="button"
