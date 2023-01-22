@@ -36,16 +36,18 @@ const workExpBody = (
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl1
+          name='title'
           label="Title"
-          placeholder="Enter title eg. Frontend developer"
+          placeholder="Enter title"
           value={values.title}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, title: event.target.value }))
           }
         />
         <InputControl1
+          name='companyName'
           label="Company Name"
-          placeholder="Enter company name eg. amazon"
+          placeholder="Enter company name"
           value={values.companyName}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, companyName: event.target.value }))
@@ -54,6 +56,7 @@ const workExpBody = (
       </div>
       <div className={styles.row}>
         <InputControl1
+          name='certificationLink'
           label="Certificate Link"
           placeholder="Enter certificate link"
           value={values.certificationLink}
@@ -65,8 +68,9 @@ const workExpBody = (
           }
         />
         <InputControl1
+          name='location'
           label="Location"
-          placeholder="Enter location eg. Remote"
+          placeholder="Enter location"
           value={values.location}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, location: event.target.value }))
@@ -77,7 +81,7 @@ const workExpBody = (
         <InputControl1
           label="Start Date"
           type="date"
-          placeholder="Enter start date of work"
+          placeholder="Enter start date"
           value={values.startDate}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, startDate: event.target.value }))
@@ -86,7 +90,7 @@ const workExpBody = (
         <InputControl1
           label="End Date"
           type="date"
-          placeholder="Enter end date of work"
+          placeholder="Enter end date"
           value={values.endDate}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, endDate: event.target.value }))
@@ -97,16 +101,19 @@ const workExpBody = (
       <div className={styles.column}>
         <label>Enter work description</label>
         <InputControl1
+          name='points'
           placeholder="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl1
+          name='points'
           placeholder="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl1
+          name='points'
           placeholder="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
@@ -118,35 +125,39 @@ const workExpBody = (
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl1
+          name='title'
           label="Title"
           value={values.title}
-          placeholder="Enter title eg. Chat app"
+          placeholder="Enter title"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, title: event.target.value }))
           }
         />
       </div>
       <InputControl1
+        name='overview'
         label="Overview"
         value={values.overview}
-        placeholder="Enter basic overview of project"
+        placeholder="Enter overview of project"
         onChange={(event) =>
           setValues((prev) => ({ ...prev, overview: event.target.value }))
         }
       />
       <div className={styles.row}>
         <InputControl1
+          name='link'
           label="Deployed Link"
           value={values.link}
-          placeholder="Enter deployed link of project"
+          placeholder="Enter ink of project"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, link: event.target.value }))
           }
         />
         <InputControl1
+          name='github'
           label="Github Link"
           value={values.github}
-          placeholder="Enter github link of project"
+          placeholder="Enter github link"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, github: event.target.value }))
           }
@@ -155,21 +166,25 @@ const workExpBody = (
       <div className={styles.column}>
         <label>Enter project description</label>
         <InputControl1
+          nmae='points'
           placeholder="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl1
+          name='points'
           placeholder="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl1
+          name='points'
           placeholder="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
         />
         <InputControl1
+          name='points'
           placeholder="Line 4"
           value={values.points ? values.points[3] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 3)}
@@ -181,18 +196,20 @@ const workExpBody = (
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl1
+          name="title"
           label="Title"
           value={values.title}
-          placeholder="Enter title eg. B-tech"
+          placeholder="Enter title "
           onChange={(event) =>
             setValues((prev) => ({ ...prev, title: event.target.value }))
           }
         />
       </div>
       <InputControl1
+        name="college"
         label="College/School Name"
         value={values.college}
-        placeholder="Enter name of your college/school"
+        placeholder="Enter name of college/school"
         onChange={(event) =>
           setValues((prev) => ({ ...prev, college: event.target.value }))
         }
@@ -201,7 +218,7 @@ const workExpBody = (
         <InputControl1
           label="Start Date"
           type="date"
-          placeholder="Enter start date of this education"
+          placeholder="Enter start date "
           value={values.startDate}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, startDate: event.target.value }))
@@ -210,7 +227,7 @@ const workExpBody = (
         <InputControl1
           label="End Date"
           type="date"
-          placeholder="Enter end date of this education"
+          placeholder="Enter end date "
           value={values.endDate}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, endDate: event.target.value }))
@@ -223,17 +240,19 @@ const workExpBody = (
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl1
+          name='name'
           label="Name"
-          placeholder="Enter your full name eg. Aashu"
+          placeholder="Enter your name"
           value={values.name}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, name: event.target.value }))
           }
         />
         <InputControl1
+          name='title'
           label="Title"
           value={values.title}
-          placeholder="Enter your title eg. Frontend developer"
+          placeholder="Enter your title"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, title: event.target.value }))
           }
@@ -241,17 +260,19 @@ const workExpBody = (
       </div>
       <div className={styles.row}>
         <InputControl1
+          name="linkedin"
           label="Linkedin Link"
           value={values.linkedin}
-          placeholder="Enter your linkedin profile link"
+          placeholder="Enter linkedin profile link"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, linkedin: event.target.value }))
           }
         />
         <InputControl1
+          name="github"
           label="Github Link"
           value={values.github}
-          placeholder="Enter your github profile link"
+          placeholder="Enter github profile link"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, github: event.target.value }))
           }
@@ -259,17 +280,19 @@ const workExpBody = (
       </div>
       <div className={styles.row}>
         <InputControl1
+          name='email'
           label="Email"
           value={values.email}
-          placeholder="Enter your email"
+          placeholder="Enter email"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, email: event.target.value }))
           }
         />
         <InputControl1
+          name='phone'
           label="Enter phone"
           value={values.phone}
-          placeholder="Enter your phone number"
+          placeholder="Enter phone number"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, phone: event.target.value }))
           }
@@ -282,24 +305,34 @@ const workExpBody = (
       <div className={styles.column}>
         <label>List your achievements</label>
         <InputControl1
+          name="points"
           placeholder="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl1
+          name="points"
           placeholder="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl1
+          name="points"
           placeholder="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
         />
         <InputControl1
+          name="points"
           placeholder="Line 4"
           value={values.points ? values.points[3] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 3)}
+        />
+        <InputControl1
+          name="points"
+          placeholder="Line 5"
+          value={values.points ? values.points[4] : ""}
+          onChange={(event) => handlePointUpdate(event.target.value, 4)}
         />
       </div>
     </div>
@@ -307,6 +340,7 @@ const workExpBody = (
   const summaryBody = (
     <div className={styles.detail}>
       <InputControl1
+        name="summary"
         label="Summary"
         value={values.summary}
         placeholder="Enter your objective/summary"
@@ -319,6 +353,7 @@ const workExpBody = (
   const otherBody = (
     <div className={styles.detail}>
       <InputControl1
+        name="other"
         label="Other"
         value={values.other}
         placeholder="Enter something"

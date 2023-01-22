@@ -41,11 +41,13 @@
     color: #239ce2;
     
   }
+
 .body{
-  padding:10px;
+  margin-right:10px;
   display:flex;
   flex-direction: column;
-  gap:20px;
+  gap:15px;
+  
 }
 .detail {
   display: flex;
@@ -55,7 +57,7 @@
 
 .detail .row {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 .detail .column {
   display: flex;
@@ -118,7 +120,7 @@
   padding: 11px 15px 11px 15px;
     border-radius: 5px;
     border:1px solid transparent;
-    background:  linear-gradient(130deg,#2fbafb 29.71%, #2f5ffb 99.36%);
+    background: #2f5ffb;
     color: white;
     outline: none;
     font-weight: 500;
@@ -130,15 +132,17 @@
     margin-bottom: 10px;
 }
 .save:hover {
+  background: #2f5ffb;
+    color: white;
   border:1px solid transparent;
-  box-shadow: 0px 7px 5px  rgba(234, 234, 234, 0.3);
+  box-shadow: 0px 7px 5px  rgba(0, 0, 0, 0.3);
   transform: translateY(3px);
 }
 .save:active {
   background: #fff;
   color:#2f5ffb;
   border:1px solid #2f5ffb;
-  box-shadow: 10px 10px 4px rgba(234, 234, 234, 0.3);
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.3);
   transform: translateY(3px);
 }
 
@@ -150,19 +154,17 @@
 @media only screen and (max-width:700px){
     
   .container2 {
-      width: 550px;
+      width: 530px;
     height: fit-content;
     max-width: 555x;
     display:flex;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
         gap: 15px;
-      overflow-x: auto;
+      overflow-x: hidden;
       margin-left: 60px;
     }
-    .header .section{
-        border-bottom: 2px solid transparent;
-        cursor: pointer;
-        white-space:normal;
+    .body{
+      overflow-x: hidden;
     }
-}
+  }

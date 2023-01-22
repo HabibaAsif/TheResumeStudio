@@ -129,6 +129,7 @@ function Body() {
     summary: "Summary",
     other: "Other",
   };
+
   const resumeRef = useRef();
 
   const [activeColor, setActiveColor] = useState(color[0]);
