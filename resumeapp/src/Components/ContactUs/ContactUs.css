@@ -38,15 +38,16 @@
 }
 
 .contact-rightside form .form-control {
-  -webkit-appearance: none;
-  width: 20rem;
-  height: 2.5rem;
+  
+  width: 600px;
+  height: 60px;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 25px;
   outline: none;
-  border: 2px solid var(--orange);
-  padding-left: 1rem;
+  border: 3px solid var(--orange);
+  padding-left: 15px;
   font-weight: lighter;
+  
 }
 
 .contact-rightside form .form-check-input {
@@ -57,21 +58,29 @@
 .form-checkbox-style {
   margin: 0rem;
 }
-.row1{
+.row-contact{
   display: flex;
-  flex:1;
+  flex-direction: column;
   gap: 10px;
+  /* border: 10px solid black; */
+  margin-bottom: 5px;
+
 }
-
-
-.message-box{
-  display: flex;
-  margin-top: 4px;
+#emailid{
+  width: 583px;
+  padding: 0px;
+  padding-left: 12px;
+  
+}
+#submitbutton{
+  width: 100px !important;
+  margin-right: 280px !important;
+  /* margin-top: 5px !important; */
+  border-radius: 8px !important;
 }
 
 textarea{
-  height: 16rem!important;
-  width: 42rem!important;
+height: 200px!important;
 }
 .contact-rightside form .main-hero-para {
   font-size: 1rem;
