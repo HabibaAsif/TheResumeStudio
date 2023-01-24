@@ -136,7 +136,8 @@
     align-items: center;
     cursor:pointer;
     transition: all ease 0.5s;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 .save:hover {
   background: #2f5ffb;
