@@ -21,7 +21,7 @@ const Help = () => {
             </video>
 
             <video width="520" height='240' controls>
-              <source src='/Videos/helpVideo8.mp4'/>
+              <source src='/Videos/helpVideo5.mp4'/>
             </video>
 
         </div>
