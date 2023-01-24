@@ -1,22 +1,22 @@
 .floatingDiv {
   justify-content: space-around;
-  background: linear-gradient(130deg,var(--purple),rgb(32, 145, 245),var(--purple));
+  background: linear-gradient(160deg,var(--purple),rgb(32, 145, 245),var(--purple));
   box-shadow: var(--boxShadow);
   border-radius: 17px;
   display: flex;
   align-items: center;
-  padding: 9px 28px 0px 0px;
+  padding: 2px 60px 5px 0px;
   height: 4.5rem;
-  width: 220px;
+  width: 280px;
   margin-left:1px ;
 
 }
 .floatingDiv > img {
-  transform: scale(0.4);
+  transform: scale(0.6);
 }
 .floatingDiv > span {
   font-family: sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: white;
 }
 

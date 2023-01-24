@@ -124,10 +124,16 @@
   border: 4px solid black;
 }
 
+<<<<<<< HEAD
 .menu-trigger{
   visibility: hidden;
 
 }
+=======
+
+
+
+>>>>>>> eb7b90e4894d8180b7a23181ec030e5fb58b62d8
 ul{
   list-style: none;
 }

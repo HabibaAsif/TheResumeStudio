@@ -1,52 +1,54 @@
 import React, { useState } from "react";
 import './ContactUs.css'
-import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { themeContext } from "../../Context";
 import{ db } from '../../firebase';
 import { addDoc, collection } from "firebase/firestore";
+import { toast } from "react-toastify";
+// import './InputContact';
 
+const initialState = {
+  firstname: "",   
+  lastname: "",
+  phonenumber: "",
+  email: "",
+  message: ""
+};
 
-// import {contactFormSchema} from "../../schemas/schema.jsx"
 
 const Contact = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
 
-  const navigate = useNavigate();
-  const [errorMsg, setErrorMsg] = useState("");
-  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+  const [state, setState] = useState(initialState);
+  const [data, setData] = useState({});
 
-  const [firstName, setfirstName]=useState();
-  const [lastName, setlastName]=useState();
-  const [email, setEmail]=useState();
-  const [PhoneNumber, setPhoneNumber]=useState();
-  const [message, setMessage]=useState();
 
-  const userCollectionRef =collection(db, "contactdata");
+  const { firstname, lastname, phonenumber, email, message} = state;
 
-  const handleSubmit=()=>{
-
-    if (!firstName || !lastName || !email ||!PhoneNumber|| !message) {
-      setErrorMsg("Fill all fields");
-      return;
-    }
-    setErrorMsg("");
-
+  const handleInputChange = (e) => {
+    const {name, value} = e.target;
+    setState({...state, [name]: value});
+  };
+  // const userCollectionRef =collection(db, "contactdatabase");
   
-
-    addDoc(userCollectionRef,{
-      First_Name: firstName,
-      Last_Name: lastName,
-      Email: email,
-      Phone_Number: PhoneNumber,
-      Message: message
-    })
-  }
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(!firstname || !lastname || !phonenumber || !email || !message){
+    // if (!firstname.length===3 && !firstname.length===20 ){
+      toast.error("provide information")
+    };
+    if (firstname && lastname && phonenumber && email && message){
+      addDoc(collection(db,'contactdatabase'),state);
+      toast.success("Thank You For Your Feedback!!!");
+      const {name, value} = e.target;
+      setState({...initialState, [name]:value});
+      };
+    };
+ 
   return (
     <>
-      <section className="contactus-section" id='ContactUs'>
+      <section className="contactus-section" id="ContactUs">
         <div className="contactus-text">
                 <div className="contactus-heading">
                   <span style={{color: darkMode? 'white': ''}}>
@@ -61,67 +63,76 @@ const Contact = () => {
 
                 {/* right side contact form  */}
                 <div className="contact-rightside">
-                  <form >
+                  <form onSubmit={handleSubmit}>
 
-                    <div className="row1">
-                      <div className="contact-input-feild">
-                        <input
+                    <div className="row-contact">
+                      
+                        <input 
+                          id="firstname"
+                          name="firstname"
+                          value={firstname}
                           type="text"
                           className="form-control"
                           placeholder="First Name"
-                          onChange={(event)=>{
-                              setfirstName(event.target.value);
-                          }}
+                          required={true} minLength='3' maxlength="20" pattern='^[A-Za-z]+$' title='*This field requires alphabets only'
+                          onChange={handleInputChange}
                         />
 
                       </div>
-                      <div  className="contact-input-feild">
-                        <input
+                    <div className="row-contact">
+                        <input 
+                          id="lastname"
+                          name="lastname"
+                          value={lastname}
                           type="text"
                           className="form-control"
                           placeholder="Last Name"
-                          onChange={(event)=> {
-                            setlastName(event.target.value);
-                          }}
+                          required={true} minLength='3' maxlength="20" pattern='^[A-Za-z]+$' title='*This field requires alphabets only'
+                          onChange={handleInputChange}
                         />
 
-                      </div>
+                      
                     </div>
-                    <div className="row1">
-                      <div className="contact-input-feild">
+                    <div className="row-contact">
+                      
                         <input
-                          type="integer"
+                        id='phonenumber'
+                        name="phonenumber"
+                        value={phonenumber}
+                          type="tel"
                           className="form-control"
                           placeholder="Phone Number "
-                          onChange={(event)=>{
-                            setPhoneNumber(event.target.value);
-                          }}
+                          pattern="[0-9]{4}[0-9]{7}" title='*Please fill out this field in 03345789678 format' required={true} maxlength="11"
+                          onChange={handleInputChange}
                         />
                       </div>
-                      <div className="contact-input-feild">
+                      <div className="row-contact">
                         <input
-                          type="string"
+                          type="email"
+                          id='email'
+                          name="email"
+                          value={email}
                           className="form-control"
                           placeholder="Email ID"
-                          onChange={(event)=>{
-                            setEmail(event.target.value);
-                          }}
-                        />
+                           maxlength='30' required={true} pattern='[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}'
+                   title='*Please fill out this field in abc@gmail.com format ' onChange={handleInputChange}/>
 
-                      </div>
+                      
                     </div>
 
-                    <div className="row1 message-box">
-                      <div>
+                    <div className="row-contact">
+                      
                         <textarea 
+                        id="message"
+                        name="message"
+                        value={message}
+                        required={true}
                           type="text"
                           className="form-control"
                           placeholder="Enter Your Message"
-                          onChange={(event)=>{
-                            setMessage(event.target.value);
-                          }}
+                          onChange={handleInputChange}
                         />
-                      </div>
+                      
                     </div>
                     <div class="form-check form-checkbox-style">
                       <input
@@ -137,15 +148,7 @@ const Contact = () => {
                         email address or phone number above
                       </label>
                     </div>
-
-                    <button
-                      onClick={handleSubmit}
-                      type="submit"
-                      className="button"
-                      //onClick={submitData}}
-                      >
-                      Submit
-                    </button>
+                    <input type='submit' value='Submit' />
 
                     <span className="static-msg"></span>
                     

@@ -8,7 +8,7 @@
 
 /* heading */
 .template> span {
-  color: var(--black);
+  color: var(--orange);
   font-size: 3rem;
   font-weight: bold;
 }

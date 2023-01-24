@@ -12,7 +12,6 @@ import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyA3AuTjX95-vMtEev6Ft6DGjJDNb2r2-yE",
   authDomain: "resume-builder-1d9d9.firebaseapp.com",
-  databaseURL: "https://resume-builder-1d9d9-default-rtdb.firebaseio.com",
   projectId: "resume-builder-1d9d9",
   storageBucket: "resume-builder-1d9d9.appspot.com",
   messagingSenderId: "79041754832",

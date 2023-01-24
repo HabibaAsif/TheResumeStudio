@@ -38,7 +38,7 @@ const Resume = forwardRef((props, ref) => {
   };
 
   const sectionDiv = {
-    [sections.workExp]: (
+    [sections.workExp]: (Object.keys(info.workExp.details)?.length?
       <div
         key={"workexp"}
         draggable
@@ -99,9 +99,8 @@ const Resume = forwardRef((props, ref) => {
             </div>
           ))}
         </div>
-      </div>
-    ),
-    [sections.project]: (
+      </div>:""),
+    [sections.project]: (Object.keys(info.project.details)?.length?
       <div
         key={"project"}
         draggable
@@ -155,9 +154,8 @@ const Resume = forwardRef((props, ref) => {
             </div>
           ))}
         </div>
-      </div>
-    ),
-    [sections.education]: (
+      </div>:""),
+    [sections.education]: (Object.keys(info.education.details)?.length?
       <div
         key={"education"}
         draggable
@@ -194,9 +192,8 @@ const Resume = forwardRef((props, ref) => {
             </div>
           ))}
         </div>
-      </div>
-    ),
-    [sections.achievement]: (
+      </div>:""),
+    [sections.achievement]: (Object.keys(info.achievement.points)?.length?
       <div
         key={"achievement"}
         draggable
@@ -206,9 +203,7 @@ const Resume = forwardRef((props, ref) => {
           info.achievement?.sectionTitle ? "" : styles.hidden
         }`}
       >
-        <div className={styles.sectionTitle}>
-          {info.achievement?.sectionTitle}
-        </div>
+        <div className={styles.sectionTitle}>{info.achievement?.sectionTitle}</div>
         <div className={styles.content}>
           {info.achievement?.points?.length > 0 ? (
             <ul className={styles.numbered}>
@@ -222,9 +217,8 @@ const Resume = forwardRef((props, ref) => {
             <span />
           )}
         </div>
-      </div>
-    ),
-    [sections.summary]: (
+      </div>:""),
+    [sections.summary]: (Object.keys(info.summary.detail)?.length?
       <div
         key={"summary"}
         draggable
@@ -238,9 +232,9 @@ const Resume = forwardRef((props, ref) => {
         <div className={styles.content}>
           <p className={styles.overview}>{info.summary?.detail}</p>
         </div>
-      </div>
+      </div>:""
     ),
-    [sections.other]: (
+    [sections.other]: (Object.keys(info.other.detail)?.length?
       <div
         key={"other"}
         draggable
@@ -254,7 +248,7 @@ const Resume = forwardRef((props, ref) => {
         <div className={styles.content}>
           <p className={styles.overview}>{info?.other?.detail}</p>
         </div>
-      </div>
+      </div>:""
     ),
   };
 
