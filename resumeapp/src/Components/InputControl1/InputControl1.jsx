@@ -10,7 +10,7 @@ function InputControl1({ label, ...props }) {
           {label && <label>{label}</label>}
           
         </div>
-        <input type="link" {...props} />
+        <input minlength="5" type="text" {...props} />
       </div>
     </div>
   );
