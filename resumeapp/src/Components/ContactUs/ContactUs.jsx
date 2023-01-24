@@ -148,7 +148,7 @@ const Contact = () => {
                         email address or phone number above
                       </label>
                     </div>
-                    <input type='submit' value='save' />
+                    <input type='submit' value='Submit' />
 
                     <span className="static-msg"></span>
                     
