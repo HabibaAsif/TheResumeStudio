@@ -41,14 +41,14 @@ const theme = useContext(themeContext);
 const darkMode = theme.state.darkMode;
 return (
   <body className='profile'>
-        <Navbar/>
+        
         <div className="App"
         style={{
         background: darkMode ? "black" : "",
         color: darkMode ? "white" : "",
         }}
         >
-        
+        <Navbar/>
           
           <title>Profile</title>
           <link rel="stylesheet" href="Style.css"/>

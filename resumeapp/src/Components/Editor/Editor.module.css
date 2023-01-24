@@ -50,11 +50,11 @@
   }
 
 .body{
+  margin-top: 10px;
   margin-right:10px;
   display:flex;
   flex-direction: column;
-  gap:15px;
-  
+ 
 }
 .detail {
   display: flex;
