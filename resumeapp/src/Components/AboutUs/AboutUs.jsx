@@ -28,9 +28,9 @@ const AboutUs = () => {
             </div>
 
             <div className='about-cards1'> 
-                <span>Features</span>
+                
                 <div>
-                <div><FloatinDiv img={Crown}text1={"Awesome"} text2={"Resume Creation"}/></div>
+                <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Awesome & Elegant"} text2={"Resume Creation"}/></div>
                 <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Update your Resume"} text2={"When Your Want!!"}/></div>
                 <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Generate"} text2={"Your Resume as PDF"}/></div>
                 </div>
@@ -38,11 +38,11 @@ const AboutUs = () => {
 
             <div className='about-cards2'>
             <div>
-                <div ><FloatinDiv img={Crown}text1={"Professional"} text2={"Resume Template"}/></div>
+                <div style={{margin:'10px'}} ><FloatinDiv img={Crown}text1={"Professional Resume"} text2={"Template For Everyone"}/></div>
                 <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Easy And "} text2={"Simple To Use Website"}/></div>
-                <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Save Your"} text2={"Precious Time"}/></div>
+                <div style={{margin:'10px'}}><FloatinDiv img={Crown}text1={"Save Your"} text2={"Precious Time With Us"}/></div>
             </div> 
-            </div>
+            </div> 
           
         </div>
         
