@@ -41,6 +41,8 @@ const Contact = () => {
     if (firstname && lastname && phonenumber && email && message){
       addDoc(collection(db,'contactdatabase'),state);
       toast.success("Thank You For Your Feedback!!!");
+      const {name, value} = e.target;
+      setState({...initialState, [name]:value});
       };
     };
  
