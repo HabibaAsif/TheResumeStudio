@@ -158,7 +158,7 @@ reauthenticateWithCredential(userbforeauth, credential);
               <hr className="sectionsep"/>
               <div className="row1">
                 <div className="col-sm-6">
-                  <p className="font-weight">First Name</p>
+                  <p className="fonts-bold">First Name</p>
                     <input id="fn" className="icon-rtlfn" type='text' required={true} 
                      value={firstName} placeholder='Gina'
                      maxLength="20" pattern='^[A-Za-z]+$' title='*This field requires alphabets only' 
@@ -166,7 +166,7 @@ reauthenticateWithCredential(userbforeauth, credential);
                     </input>
                 </div>
                 <div className="col-sm-6">
-                  <p className="font-weight">Last Name</p>
+                  <p className="fonts-bold">Last Name</p>
                   <input id="ln" className="icon-rtlln" type='text' required={true} maxLength="20" placeholder='Linneti'
                   value={lastName} pattern='^[A-Za-z]+$' title='*This field requires alphabets only' onInvalid={e => set(e)} 
                   onChange={(event)=>{setlastName(event.target.value);}}/>
@@ -176,14 +176,14 @@ reauthenticateWithCredential(userbforeauth, credential);
               </br>
               <div className="row1">
                 <div className="col-sm-6">
-                  <p className="font-weight">Phone</p>
+                  <p className="fonts-bold">Phone Number</p>
                   <input className="icon-rtlp" type='tel' placeholder="03345789678" pattern="[0-9]{4}[0-9]{7}" 
                   value={PhoneNumber} title='*Please fill out this field in 03345789678 format' required={true}  
                   maxlength="11" onChange={(event)=>{setPhoneNumber(event.target.value);}}/>
                 </div>
            
                 <div className="col-sm-6">
-                  <p className="font-weight">Password</p>
+                  <p className="fonts-bold">Password</p>
                   <input className="icon-rtlpw" type='password' value={Password}
                   placeholder='******' required={true} minLength="6" maxLength='20'
                   onChange={(event)=>{setPassword(event.target.value);}}/>

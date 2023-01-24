@@ -39,7 +39,6 @@
 
 .contact-rightside form .form-control {
   
-  width: 600px;
   height: 60px;
   border-radius: 8px;
   font-size: 25px;
@@ -104,7 +103,16 @@ margin-top: 20px;
 align-items: center;
 color: var(--orange);
 }
-input[type='text'],
+#firstname,lastname{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid var(--orange);
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
 input[type='email'],
 input[type='number'],
 select{
@@ -130,6 +138,6 @@ input[type="submit"]{
   
 }
 input[type="submit"]:hover{
-  background-color: aqua;
+  background-color: var(--orange);
 
 }

@@ -65,13 +65,13 @@
   }
 
 
-.font-weight{
+.fonts{
   font-size: large;
   font-weight: 300;
 }
 .font-weight-bold{
-  font-size: large;
-  font-weight: 300;
+  font-size: x-large;
+  font-weight: 200;
   margin-bottom: 8px;
   margin-top: 8px;
 }
@@ -85,25 +85,14 @@
   float: right;
   margin-bottom: 15px;
   transition: all ease 0.5s;
-
   background-color: #FCA61F; 
 }
-input[type=submit] { 
-  color: black;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 0px;
-  cursor: pointer;
-  width:100%;
-  float: right;
-  margin-bottom: 15px;
-  transition: all ease 0.5s;
-
-  background-color: #FCA61F;
-
+#submit:hover{
+  background-color: #788097;
+color:white
 }
 button:hover {
-  background-color: #daa0ff;
+  background-color: #242D49;
 
 }
 form {
@@ -113,7 +102,7 @@ form {
 
 
 
-input[type=text],input[type=password],input[type=tel]{
+input[type=password],input[type=tel]{
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -144,35 +133,44 @@ a.list-group-item{
   }
 }
 
-
-body #profile{
-  margin: 0;
-  line-height: 1.5;
-  background-image: linear-gradient(to right,#DDF8FE,#e9c6ff);
+.icon-rtlfn{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
 }
+.icon-rtlln{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
 
-
+}
 .icon-rtle:focus {
-  border: 2px solid #eed2ff;
+  border: 2px solid #242D49;
   background: white ;
 }
 .icon-rtlfn:focus {
-  border: 2px solid #eed2ff;
+  border: 2px solid #242D49;
   background: white ;
 }
 .icon-rtlln:focus {
-  border: 2px solid #eed2ff;
+  border: 2px solid #242D49;
   background: white ;
 }
 .icon-rtlfn::focus {
-  border: 2px solid #eed2ff;
+  border: 2px solid #242D49;
   background: white ;
 }
 .icon-rtlp:focus {
-  border: 2px solid #eed2ff;
+  border: 2px solid #242D49;
   background: white ;
 }
 .icon-rtlpw:focus {
-  border: 2px solid #eed2ff;
+  border: 2px solid #242D49;
   background: white ;
 }

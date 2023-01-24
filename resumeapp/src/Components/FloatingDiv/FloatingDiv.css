@@ -1,6 +1,6 @@
 .floatingDiv {
   justify-content: space-around;
-  background: linear-gradient(160deg,var(--purple),rgb(32, 145, 245),var(--purple));
+  background: linear-gradient(160deg,#242D49,#00000014);
   box-shadow: var(--boxShadow);
   border-radius: 17px;
   display: flex;

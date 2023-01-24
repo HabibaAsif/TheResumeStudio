@@ -109,10 +109,9 @@ return (
         }} >
           <div  className="container">
             <div className="row d-flex justify-content-center">
-              <div className="col-md-10 mt-3 pt-4">
+              <div className="col-md-10 mt-1 pt-4">
                 <div className="row1 z-depth-3">
                   <div className="col-sm-12 bg-white rounded-right">
-
                     <h3 className="mt-3 text-center"> Profile<div className="ediprofhover">
                       <Link style={{color:'#FCA61F'}} to="/editprofile">
                       <i className="far fa-edit fa-2x mb-4" style={{color:'#FCA61F'}}> </i>
