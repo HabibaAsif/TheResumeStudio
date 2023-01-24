@@ -41,6 +41,8 @@ const Contact = () => {
     if (firstname && lastname && phonenumber && email && message){
       addDoc(collection(db,'contactdatabase'),state);
       toast.success("Thank You For Your Feedback!!!");
+      const {name, value} = e.target;
+      setState({...initialState, [name]:value});
       };
     };
  
@@ -146,7 +148,7 @@ const Contact = () => {
                         email address or phone number above
                       </label>
                     </div>
-                    <input type='submit' value='save' />
+                    <input type='submit' value='Submit' />
 
                     <span className="static-msg"></span>
                     

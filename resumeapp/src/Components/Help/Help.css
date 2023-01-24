@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 .help-text>:nth-child(1){                 /*the resume studio text styling*/
-    color: var(--black);
+    color: var(--orange);
     font-weight: bold;
     font-size: 3rem;
 } 
