@@ -23,11 +23,9 @@
   margin-left: -15px;
 }
 #no_resume{
-  visibility: hidden;
-}
-#resume{
   visibility: visible;
 }
+
 .row1 {
  
     display: flex;
@@ -76,6 +74,19 @@
   font-weight: 300;
   margin-bottom: 8px;
   margin-top: 8px;
+}
+#submit{
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  width:100%;
+  float: right;
+  margin-bottom: 15px;
+  transition: all ease 0.5s;
+
+  background-color: #FCA61F; 
 }
 input[type=submit] { 
   color: black;

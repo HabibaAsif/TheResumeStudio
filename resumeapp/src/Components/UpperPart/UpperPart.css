@@ -30,11 +30,7 @@
 
 .head-text>:nth-child(3){
     font-weight: 100;
-<<<<<<< HEAD
-    font-size: 14px;
-=======
     font-size: 20px;
->>>>>>> eb7b90e4894d8180b7a23181ec030e5fb58b62d8
     color: var(--gray);
     margin-top: 10px;
 }
@@ -68,20 +64,6 @@
 
 }
 
-<<<<<<< HEAD
-.blur{
-    position: absolute;
-    width: 22rem;
-    height: 14rem;
-    border-radius: 50%;
-    background: #edd0ff;
-    filter: blur(72px);
-    z-index: -9;
-    top: -18%;
-    left: 56%;
-}
-
-=======
 .yellow{
     margin-top: 72px;
     margin-left: 111px;
@@ -109,14 +91,9 @@
     z-index: -1;
     background:url('/src/img/blue.png');
 }
->>>>>>> eb7b90e4894d8180b7a23181ec030e5fb58b62d8
 
 @media screen and (max-width: 480px) {
     .head-left{
         flex-direction: column;
     }
-<<<<<<< HEAD
   }
-=======
-  }
->>>>>>> eb7b90e4894d8180b7a23181ec030e5fb58b62d8

@@ -7,6 +7,7 @@ import { auth } from "../../firebase";
 import { db } from "../../firebase";
 import Swal from 'sweetalert2';
 import styles from "./Signup.module.css";
+import Navbar from '../Navbar/Navbar';
 
 function Signup() {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ function Signup() {
             }
             Swal.fire('Your account been created successfully!', '', 'success')
 
-        navigate("/login");
+        navigate("/");
       
       })
       .catch((err) => {
@@ -60,7 +61,10 @@ function Signup() {
   };
 
   return (
+    <>                <Navbar/>
+    
     <div className={styles.container}>
+
       <div className={styles.innerBox}>
         <h1 className={styles.heading}>Signup</h1>
 
@@ -115,6 +119,7 @@ function Signup() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

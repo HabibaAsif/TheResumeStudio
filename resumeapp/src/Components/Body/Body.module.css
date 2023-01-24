@@ -110,3 +110,71 @@ padding: 11px 15px 11px 15px;
   box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.3);
   transform: translateY(3px);
 }
+
+.toolbar .button_print svg {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+}
+@media only screen and (max-width:750px){
+  .row{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .toolbar{
+    margin-top:-15px;
+      display: grid;
+  }
+  .palette{
+    margin-top: 310px;
+    position:fixed;
+      display: grid;
+  }
+  .palette .color{
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 100%;
+      border: 2px solid transparent;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      transition: all ease 0.5s;
+  }
+  .palette .color:hover {
+    border: 2px solid transparent;
+      box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+      transform: translateX(2px);
+    }
+  .palette .color:active {
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid #181818;
+    }
+  .toolbar .button_print {
+    margin-top: 670px;
+    position:fixed;
+    text-indent: -999999px;
+    }
+  .toolbar .button_print:hover {
+      box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+      transform: translateX(2px);
+    }
+    .toolbar .button_download {
+      padding: 11px 15px;
+      margin-top: 810px;
+      position:fixed;
+      text-indent: -999999px;
+      }
+    .toolbar .button_download:hover {
+        box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+        transform: translateX(2px);
+      }
+    .container .editor_left{
+      width:fit-content;
+      height:fit-content;
+      display: flex;
+  }
+    .container1 .resume_right{
+      margin-top: 20px;
+      display: flex;
+  }
+}

@@ -40,7 +40,7 @@ export default function Profile() {
  
   const [file , setFile] = useState([])
   const [userfile , setuserFile] = useState('')
-  const [resume , setresume] = useState(false)
+  //const [resume , setresume] = useState(false)
   const userid=userdetails.uid
  // console.log(userid)
 
@@ -77,6 +77,8 @@ const getuserdocbyq=async(id)=>{
  //console.log(userfile)
   } 
  getuserdocbyq(userid)
+
+
 const theme = useContext(themeContext);
 const darkMode = theme.state.darkMode;
 return (
@@ -140,7 +142,7 @@ return (
                     <h3 className="mt-3 text-center">Saved Resumes</h3>
                     <hr className="sectionsep" />
                     <div className="row1">
-                      <div id='resume' className="col-sm-12" style={{visibility:resume? 'visible':''}}>
+                      <div id='resume' className="col-sm-12" >
                                       <ListGroup>
    {
         file?.map((resume,i)=>(
@@ -152,8 +154,8 @@ return (
     }
   </ListGroup> 
                       </div>
-                      <div id='no_resume'className='col-sm-12' style={{visibility:resume? 'hidden':''}}>'No Saved Resumes'</div> 
-                    </div>
+                      </div>
+                     
                     <br>
                     </br>
                   </div>
