@@ -34,7 +34,6 @@ function Editor(props) {
     summary:activeInformation?.detail?.summary || "",
     other:activeInformation?.detail?.other || "",
   });
-  ///////// error handling functions//////////////
   const [formErrors,setErrors]=useState({});
   const [isSubmit,setisSubmit]=useState(false);
   const handleSubmit = (e) =>{
@@ -43,89 +42,101 @@ function Editor(props) {
     setisSubmit(true)
   }
 
-  //////// it is supposed to stop the submit ///////////////
 useEffect(()=>{
   const errorval = Object.keys.length===0;
     if (errorval) return;
 },[formErrors]);
-//////////////////////
 
   const validate=(values)=>{
     const errors={};
     const regex= /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-    const url= /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    const url=/\//ig;
+    const urlgit=/\//ig;
+    const urllinkedin=/\//ig;
+    const urlcertificate=/\//ig;
     if (!values.name){
-      errors.name="User name is required"
-    }else if (!values.name.match(/^[a-zA-Z]+$/)){
-      errors.name="Name must be only letters"
-    }else if(values.name.length<5){
-      errors.name="Name must be at least 5 characters"
+      errors.name="⚠ Name field is empty"
+    }else if (!values.name.match(/^[A-Za-z\s]*$/)){
+      errors.name="⚠ Contains elements other than letters"
+    }else if(values.name.length<3){
+      errors.name="⚠ Name is too short"
     }
     if (values.title){
       if(values.title.length<5){
-          errors.title="Title must be at least 5 characters"}
-      else if (!values.title.match(/^[a-zA-Z]+$/)){
-          errors.title="Title must be only letters"
+          errors.title="⚠ Title is too short"}
+      else if (!values.title.match(/^[A-Za-z\s]*$/)){
+          errors.title="⚠ Contains elements other than letters"
         }
-    }  
-    if (!url.test(values.linkedin)){
-      errors.linkedin="http or https is required"
     }
-    if (!url.test(values.github)){
-      errors.github="http or https is required"
+    if (values.github){
+      if (!urlgit.test(values.github)){
+        errors.github="⚠ Link format is not correct"}
     }
-    if (values.phone.length!==11){
-      errors.phone="Phone number must be 11 digits"
+    if (values.linkedin){
+      if (!urllinkedin.test(values.linkedin)){
+        errors.linkedin="⚠ Link format is not correct"}
+    }    
+    if (!values.phone){
+      errors.phone="⚠ Phone number field is empty"
+    }else if (values.phone.length!==11){
+      errors.phone="⚠ Phone number is less than 11 digits"
     }else if (!values.phone.match(/^[0-9\b]+$/)){
-      errors.phone="Phone must be only integers"
+      errors.phone="⚠ Contains elements other than integers"
     }
-    if (!regex.test(values.email)){
-      errors.email="Email is not in valid format"
+    if(!values.email){
+      errors.email="⚠ Email field is empty"
+    }else if (!regex.test(values.email)){
+      errors.email="⚠ Email format is not correct"
     }
-    if (!url.test(values.link)){
-      errors.link="http or https is required"
-    }
+    if (values.link){
+      if (!url.test(values.link)){
+        errors.link="⚠ Link format is not correct"}
+    } 
     if (!values.companyName){
-      errors.companyName="Company name is required"
-    }else if(values.companyName.length<5){
-      errors.companyName="Name must be at least 5 characters"
+      errors.companyName="⚠ Name field is empty"
+    }else if(values.companyName.length<3){
+      errors.companyName="⚠ Name is too short"
     }
-    if (!url.test(values.certificationLink)){
-      errors.certificationLink="http or https is required"
-    }
+    if (values.certificationLink){
+      if (!urlcertificate.test(values.certificationLink)){
+        errors.certificationLink="⚠ Link format is not correct"}
+    } 
     if (!values.location){
-      errors.location="Location is required"
-    }else if(values.location.length<10){
-      errors.location="Address must be at least 10 characters"
+      errors.location="⚠ Address field is empty"
+    }else if(values.location.length<5){
+      errors.location="⚠ Address is too short"
     }
     if (!values.overview){
-      errors.overview="Overview is required"
-    }else if(values.overview.length<10){
-      errors.overview="Overview must be at least 10 characters"
+      errors.overview="⚠ Overview field is empty"
+    }else if(values.overview.length<5){
+      errors.overview="⚠ Overview is too short"
     }
     if (!values.college){
-      errors.college="School name is required"
-    }else if(values.college.length<5){
-      errors.college="Name must be at least 5 characters"
+      errors.college="⚠ School name field is empty"
+    }else if(values.college.length<3){
+      errors.college="⚠ Name is too short"
     }
-    if (!values.summary){
-      errors.summary="Detail is required"
-    }else if(values.summary.length<15){
-      errors.summary="Detail must be at least 15 characters"
+    if (values.summary){
+      if (!values.summary){
+        errors.summary="⚠ Detail field is empty"
+      }else if(values.summary.length<5){
+        errors.summary="⚠ Detail is too short"
+      }
     }
-    if (!values.other){
-      errors.other="Detail is required"
-    }else if(values.other.length<15){
-      errors.other="Detail must be at least 15 characters"
+    if (values.other){
+      if (!values.other){
+        errors.other="⚠ Detail field is empty"
+      }else if(values.other.length<5){
+        errors.other="⚠ Detail is too short"
+      }
     }
     if (values.points){
-      if(values.points.length<15){
-          errors.points="Title must be at least 15 characters"}
-      
+      if(values.points.length<5){
+          errors.points="⚠ Detail is too short"}
     }  
     return errors
   }
-////////////////////////
+
   const handlePointUpdate = (value, index) => {
     const tempValues = { ...values };
     if (!Array.isArray(tempValues.points)) tempValues.points = [];
@@ -140,7 +151,7 @@ const workExpBody = (
           maxlength="30"
           name="title"
           label="Title"
-          placeholder="Enter title"
+          placeholder="Enter experience title"
           value={values.title}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, title: event.target.value }))
@@ -211,21 +222,21 @@ const workExpBody = (
         <label>Enter work description</label>
         <InputControl1
           name='points'
-          maxlength="60"
+          
           placeholder="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl1
           name='points'
-          maxlength="60"
+          
           placeholder="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl1
           name='points'
-          maxlength="60"
+          
           placeholder="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
@@ -242,7 +253,7 @@ const workExpBody = (
           maxlength="30"
           label="Title"
           value={values.title}
-          placeholder="Enter title"
+          placeholder="Enter project title"
           onChange={(event) =>
             setValues((prev) => ({ ...prev, title: event.target.value }))
           }
@@ -251,7 +262,7 @@ const workExpBody = (
       <label className={styles.errors}>{formErrors.title}</label>
       <InputControl1
         name='overview'
-        maxlength="60"
+        
         label="Overview"
         value={values.overview}
         placeholder="Enter overview of project"
@@ -282,33 +293,33 @@ const workExpBody = (
         />
       </div>
       <div className={styles.errors}>
-      <label>{formErrors.github}</label><label>{formErrors.github}</label></div>
+      <label>{formErrors.link}</label><label>{formErrors.github}</label></div>
       <div className={styles.column}>
         <label>Enter project description</label>
         <InputControl1
           nmae='points'
-          maxlength="60"
+          
           placeholder="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl1
           name='points'
-          maxlength="60"
+          
           placeholder="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl1
           name='points'
-          maxlength="60"
+          
           placeholder="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
         />
         <InputControl1
           name='points'
-          maxlength="60"
+          
           placeholder="Line 4"
           value={values.points ? values.points[3] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 3)}
@@ -324,7 +335,7 @@ const workExpBody = (
           maxlength="30"
           label="Title"
           value={values.title}
-          placeholder="Enter title "
+          placeholder="Enter education title "
           onChange={(event) =>
             setValues((prev) => ({ ...prev, title: event.target.value }))
           }
@@ -401,20 +412,6 @@ const workExpBody = (
           }
         />
         <InputControl1
-          name='phone'
-          maxlength="11"
-          label="Enter phone"
-          value={values.phone}
-          placeholder="eg: 0300*******"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, phone: event.target.value }))
-          }
-        />
-      </div>
-      <div className={styles.errors}>
-      <label>{formErrors.linkedin}</label><label>{formErrors.phone}</label></div>
-      <div className={styles.row}>
-        <InputControl1
           name='email'
           type='email'
           maxlength="50"
@@ -425,7 +422,20 @@ const workExpBody = (
             setValues((prev) => ({ ...prev, email: event.target.value }))
           }
         />
-        
+      </div>
+      <div className={styles.errors}>
+      <label>{formErrors.linkedin}</label><label>{formErrors.email}</label></div>
+      <div className={styles.row}>
+        <InputControl1
+          name='phone'
+          maxlength="11"
+          label="Enter phone"
+          value={values.phone}
+          placeholder="eg: 0300*******"
+          onChange={(event) =>
+            setValues((prev) => ({ ...prev, phone: event.target.value }))
+          }
+        />
         <InputControl1
           name="github"
           maxlength="50"
@@ -438,7 +448,7 @@ const workExpBody = (
         />
       </div>
       <div className={styles.errors}>
-      <label>{formErrors.email}</label><label>{formErrors.linkedin}</label></div>
+      <label>{formErrors.phone}</label><label>{formErrors.github}</label></div>
     </div>
   );
   const achievementsBody = (
@@ -447,35 +457,35 @@ const workExpBody = (
         <label>List your achievements</label>
         <InputControl1
           name="points"
-          maxlength="60"
+          
           placeholder="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl1
           name="points"
-          maxlength="60"
+          
           placeholder="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl1
           name="points"
-          maxlength="60"
+          
           placeholder="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
         />
         <InputControl1
           name="points"
-          maxlength="60"
+          
           placeholder="Line 4"
           value={values.points ? values.points[3] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 3)}
         />
         <InputControl1
           name="points"
-          maxlength="60"
+          
           placeholder="Line 5"
           value={values.points ? values.points[4] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 4)}
@@ -487,7 +497,6 @@ const workExpBody = (
     <div className={styles.detail}>
       <InputControl1
         name="summary"
-        maxlength="60"
         label="Summary"
         value={values.summary}
         placeholder="Enter your objective/summary"
@@ -501,7 +510,6 @@ const workExpBody = (
     <div className={styles.detail}>
       <InputControl1
         name="other"
-        maxlength="60"
         label="Other"
         value={values.other}
         placeholder="Enter something"
@@ -533,7 +541,6 @@ const workExpBody = (
     }
   };
 
-/////////it is handling all the submissions all at once ////////////
   const handleSubmission = () => {
     switch (sections[activeSectionKey]) {
       case sections.basicInfo: {
