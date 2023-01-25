@@ -74,8 +74,11 @@ const handlesubmit = (e) => {
     e.preventDefault();
     console.log("provide information")}
     else{
-      console.log('nnnnn')
+
+      //Swal.fire('Profile updated successfully!', '', 'success')
+
       updatemyprofile()
+      
       e.preventDefault();
       setfirstName('')
       setlastName('')
@@ -90,10 +93,23 @@ const handlesubmit = (e) => {
 
 ///////////////////////////////updates user table in db/////////////////////////////////
   const updatemyprofile=async()=>{
-  getdocbyq(userid)
+ // getdocbyq(userid)
+ //console.log(id)
+const collref=collection(db,'user')
+const q=query(collref,where("user_id","==",userid))
+const docrefs=await getDocs(q);
+const res=[]
+docrefs.forEach(resume=>{
+  res.push({
+    id:resume.id,...resume.data()
+})
+})
+console.log(res[0].id)
+//setFile(res[0].id)
+//console.log(file)
   console.log(userid)
-  console.log(file)
-  const collsref=doc(db,`/user/${file}`)
+  //console.log(file)
+  const collsref=doc(db,`/user/${res[0].id}`)
   await updateDoc(collsref,{'user_id': userid ,'firstname': firstName,'lastname':lastName,
   'phone':PhoneNumber,'password':Password});
   ////////////update profile//////////
@@ -103,27 +119,16 @@ const handlesubmit = (e) => {
  })
 ///////////////////////updates password//////////////////////////////
 
-//////////////////reauth before update password//////////
-/*const userbforeauth = auth.currentUser;
-const credential = EmailAuthProvider.credential(file[0].email,file[0].password);
-console.log('credential')
-console.log(credential)
-reauthenticateWithCredential(userbforeauth, credential);
-////////////////update password///////////////////
-  //const newPassword = Password;
-  console.log(userbforeauth)
-  console.log(file[0].password)*/
-  //auth=getAuth()
   const users = auth.currentUser;
   updatePassword(users, Password).then(() => {
     //const oldPassword = '123456' // Get the value of the old password
-    console.log(Password)
+    /*console.log(Password)
     const credentials = EmailAuthProvider.credential(users.email,Password);
     console.log('credentials')
     console.log(credentials)
-    reauthenticateWithCredential(users, credentials);
+    reauthenticateWithCredential(users, credentials);*/
   console.log('success')
-  Swal.fire('Profile updated successfully!', '', 'success')
+  Swal.fire('Profile updated successfully! You need to sign in again.', '', 'success')
 
 }).catch((error) => {
   console.log(error)
