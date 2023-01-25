@@ -66,7 +66,7 @@ function Signup() {
     <div className={styles.container}>
 
       <div className={styles.innerBox}>
-        <h1 className={styles.heading}>Signup</h1>
+        <h1 className={styles.signup}id='signup'>SIGNUP</h1>
 
         <InputControl
           label="First Name"

@@ -39,7 +39,7 @@ function Login() {
     <Navbar/>
     <div className={styles.container}>
       <div className={styles.innerBox}>
-        <h1 className={styles.heading}>Login</h1>
+        <h1 className={styles.login} id="login">LOGIN</h1>
 
         <InputControl
           label="Email"

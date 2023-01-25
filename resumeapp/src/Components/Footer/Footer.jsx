@@ -14,7 +14,7 @@ const Footer = () => {
             <div className='f-icons'>
                 <a href='http://www.linkedin.com'><LinkedIn color='white' size='3rem'/></a>
                 <a href='http://www.facebook.com'><Facebook color='white' size='3rem'/></a>
-                <a href='www.github.com'><Github color='white' size='3rem'/></a>
+                <a href='http://www.github.com'><Github color='white' size='3rem'/></a>
                  
             </div>
 

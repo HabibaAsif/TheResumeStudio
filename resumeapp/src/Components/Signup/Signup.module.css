@@ -19,6 +19,14 @@
   flex-direction: column;
   gap: 30px;
 }
+.signup{
+  color: var(--black);
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+margin-bottom:-10px;
+
+}
 
 .footer {
   display: flex;
@@ -36,7 +44,7 @@
 .footer button {
   outline: none;
   border: none;
-  background-color: #9900ff;
+  background-color: var(--orange);
   color: #fff;
   border-radius: 5px;
   font-weight: bold;
@@ -52,7 +60,7 @@
 }
 
 .footer button:hover {
-  background-color: #aa2aff;
+  background-color: var(--gray);
 }
 
 .footer p {
@@ -62,7 +70,7 @@
 
 .footer p span a {
   font-weight: bold;
-  color: #9900ff;
+  color: var(--orange);
   letter-spacing: 1px;
   font-size: 1rem;
   text-decoration: none;
